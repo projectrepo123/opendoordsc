@@ -6,6 +6,21 @@
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://newbeginningsdsc.com/stay/beachbound/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://newbeginningsdsc.com/stay/henrietta/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://newbeginningsdsc.com/stay/townhouse/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://newbeginningsdsc.com/privacy.html</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>

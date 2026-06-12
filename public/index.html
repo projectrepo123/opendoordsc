@@ -12,8 +12,7 @@
     No triadic comma-and lists. No em dashes in user-facing copy. Contractions OK.
   ------------------------------------------------------------
   SWAP-IN CHECKLIST (search for __SWAP__ to find each spot):
-   1. Formspree endpoint. Replace __SWAP_FORMSPREE_ID__ in the
-      inquiry fetch() with the real form ID.
+   1. Formspree endpoint. Done — using xzdqkdaw.
    2. Logo. Replace the inline .brand-mark SVG + wordmark with
       Nichole's logo <img> in the nav, mobile menu, and footer.
    3. Photos. Drop real JPGs into images/properties/ (same names)
@@ -33,14 +32,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>New Beginnings DSC | Short-Term Property Rentals in Missouri</title>
-  <meta name="description" content="Short-term property rentals across Missouri. Comfortable places, easy check-in, and quick answers from a real host. Browse our stays.">
+  <title>New Beginnings DSC | Short-Term Property Rentals in Florida and Missouri</title>
+  <meta name="description" content="Short-term property rentals across Florida and Missouri. Comfortable places, easy check-in, and quick answers from a real host. Browse our stays.">
   <meta name="robots" content="index, follow">
   <meta name="author" content="New Beginnings DSC">
   <link rel="canonical" href="https://newbeginningsdsc.com/">
 
   <meta property="og:title" content="New Beginnings DSC | Short-Term Property Rentals">
-  <meta property="og:description" content="Short-term stays across Missouri. Clean places, easy check-in, and a host who picks up the phone.">
+  <meta property="og:description" content="Short-term stays across Florida and Missouri. Clean places, easy check-in, and a host who picks up the phone.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://newbeginningsdsc.com/">
   <meta property="og:image" content="https://newbeginningsdsc.com/og-share.png">
@@ -51,7 +50,7 @@
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="New Beginnings DSC | Short-Term Property Rentals">
-  <meta name="twitter:description" content="Short-term stays across Missouri. Clean places, easy check-in, and a host who picks up the phone.">
+  <meta name="twitter:description" content="Short-term stays across Florida and Missouri. Clean places, easy check-in, and a host who picks up the phone.">
   <meta name="twitter:image" content="https://newbeginningsdsc.com/og-share.png">
 
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://formspree.io; frame-src 'none'; base-uri 'self'; form-action https://formspree.io">
@@ -71,12 +70,16 @@
     "@context": "https://schema.org",
     "@type": "LodgingBusiness",
     "name": "New Beginnings DSC",
-    "description": "Short-term property rentals across Missouri. Comfortable places, easy check-in, and quick answers from a real host.",
+    "description": "Short-term property rentals across Florida and Missouri. Comfortable places, easy check-in, and quick answers from a real host.",
     "image": "https://newbeginningsdsc.com/og-share.png",
     "url": "https://newbeginningsdsc.com/",
     "email": "hello@newbeginningsdsc.com",
+    "telephone": "+15735550100",
     "priceRange": "$$",
-    "areaServed": { "@type": "State", "name": "Missouri" }
+    "areaServed": [
+      { "@type": "State", "name": "Florida" },
+      { "@type": "State", "name": "Missouri" }
+    ]
   }
   </script>
 
@@ -87,7 +90,6 @@
     "mainEntity": [
       { "@type": "Question", "name": "How do I book a stay?", "acceptedAnswer": { "@type": "Answer", "text": "Pick a stay, send your dates through the form. I'll confirm availability and book you in. Usually same day." } },
       { "@type": "Question", "name": "What are check-in and check-out like?", "acceptedAnswer": { "@type": "Answer", "text": "Most of my places offer self check-in. You'll get arrival instructions a day or two before your trip." } },
-      { "@type": "Question", "name": "Are pets allowed?", "acceptedAnswer": { "@type": "Answer", "text": "Some of my homes welcome pets. Look for the 'Pet friendly' tag and tell me about your dog (or cat, or other) in the request." } },
       { "@type": "Question", "name": "What is your cancellation policy?", "acceptedAnswer": { "@type": "Answer", "text": "Cancellation terms go out with your booking confirmation. If plans change, just reach out and I'll do what I can." } }
     ]
   }
@@ -378,7 +380,7 @@
     /* ─── ABOUT (asymmetric, illustrated portrait placeholder) ─── */
     .about { background: var(--brand-green-light); }
     .about-grid { max-width: 640px; margin: 0 auto; text-align: center; }
-    .about-portrait { width: 128px; height: 128px; margin: 0 auto 24px; border-radius: 50%; overflow: hidden; box-shadow: var(--shadow-soft); border: 4px solid #fff; }
+    .about-portrait { width: 176px; height: 176px; margin: 0 auto 24px; border-radius: 50%; overflow: hidden; box-shadow: var(--shadow-soft); border: 4px solid #fff; }
     .about-portrait img { width: 100%; height: 100%; object-fit: cover; object-position: top center; display: block; }
     .about-text { text-align: left; }
     .about-text p { font-family: 'Inter'; color: var(--ink-muted); font-size: 17px; margin-bottom: 16px; }
@@ -435,6 +437,8 @@
     .form-success .check { width: 64px; height: 64px; border-radius: 50%; background: var(--brand-yellow-soft); color: var(--brand-green); font-size: 30px; display: flex; align-items: center; justify-content: center; margin: 0 auto 18px; }
     .form-success h3 { font-size: 26px; margin-bottom: 8px; font-weight: 500; }
     .form-success p { color: var(--ink-muted); }
+    .form-error { display: none; align-items: center; gap: 10px; margin-top: 14px; padding: 14px 16px; border-radius: var(--radius); background: rgba(217,107,74,0.1); border: 1px solid var(--brand-clay); color: #9c3b22; font-size: 14px; font-family: 'Inter', sans-serif; }
+    .form-error.show { display: flex; }
 
     /* ─── FOOTER ─── */
     .footer { background: var(--brand-green-deep); color: #fff; padding: 56px 0 0; position: relative; z-index: 1; border-top: 3px solid var(--brand-yellow); }
@@ -643,9 +647,9 @@
       <div class="container">
         <div class="hero-grid">
           <div class="hero-text">
-            <p class="eyebrow reveal">Now Booking &middot; Missouri</p>
+            <p class="eyebrow reveal">Now Booking &middot; Florida &amp; Missouri</p>
             <h1 class="reveal">Where every open door is a <span class="word-home">new start<svg class="hero-underline" viewBox="0 0 220 14" preserveAspectRatio="none" aria-hidden="true"><path d="M2 9 C 40 2, 90 13, 140 6 S 210 10, 218 5" fill="none" stroke="#f4c95a" stroke-width="4" stroke-linecap="round"/></svg></span></h1>
-            <p class="hero-sub reveal">Short-term stays across Missouri. Clean places, easy check-in, and a host who picks up the phone.</p>
+            <p class="hero-sub reveal">Short-term stays across Florida and Missouri. Clean places, easy check-in, and a host who picks up the phone.</p>
             <div class="hero-stats reveal">
               <span class="hero-stat-pill"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--brand-green)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9.5L12 3l9 6.5V20a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z"/><polyline points="9 21 9 12 15 12 15 21"/></svg>3 Unique Stays</span>
               <span class="hero-stat-pill"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--brand-green)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>&lt;24h Reply</span>
@@ -668,7 +672,7 @@
               <div class="hero-slogan-overlay" aria-hidden="true">Every stay is personal.</div>
               <div class="hero-collage">
                 <div class="hero-collage-main">
-                  <img src="/images/properties/henrietta/5V4A9042.jpg" alt="Henrietta home exterior" loading="eager">
+                  <img src="/images/properties/beachbound/OONt4Xro.jpg" alt="Beach Bound at Gulf Highlands Beach Resort" loading="eager">
                 </div>
                 <div class="hero-collage-side">
                   <div class="hero-collage-item">
@@ -811,10 +815,6 @@
             <div class="faq-answer">Most of my places offer self check-in. You'll get arrival instructions a day or two before your trip.</div>
           </details>
           <details class="faq-item">
-            <summary>Are pets allowed?</summary>
-            <div class="faq-answer">Some of my homes welcome pets. Look for the "Pet friendly" tag and tell me about your dog (or cat, or other) in the request.</div>
-          </details>
-          <details class="faq-item">
             <summary>What is your cancellation policy?</summary>
             <div class="faq-answer">Cancellation terms go out with your booking confirmation. If plans change, just reach out and I'll do what I can.</div>
           </details>
@@ -893,6 +893,7 @@
             </div>
 
             <button type="submit" class="btn btn-primary btn-block">Send My Request</button>
+            <div class="form-error" id="formError" role="alert"></div>
             <p class="form-note">We reply within 24 hours. You can also email <a href="mailto:hello@newbeginningsdsc.com">hello@newbeginningsdsc.com</a>.</p>
           </form>
 
@@ -920,7 +921,7 @@
           <div class="footer-brand">
             <img src="/images/Logo/NB_FULLCOLOR_BACKGROUNDGREE3.png" alt="New Beginnings DSC" class="nav-logo">
           </div>
-          <p class="footer-tagline">Short-term stays across Missouri. Comfortable places and a host who answers.</p>
+          <p class="footer-tagline">Short-term stays across Florida and Missouri. Comfortable places and a host who answers.</p>
           <div class="footer-contact-info">
             <p>Text or call: <a href="tel:+15735550100">(573) 555-0100</a></p>
             <p>Email: <a href="mailto:hello@newbeginningsdsc.com">hello@newbeginningsdsc.com</a></p>
@@ -1240,11 +1241,15 @@
       var form = document.getElementById('inquiryForm');
       var formSuccess = document.getElementById('formSuccess');
       var successName = document.getElementById('successName');
+      var formError = document.getElementById('formError');
 
       form.addEventListener('submit', function (e) {
         e.preventDefault();
         var hp = document.getElementById('website');
         if (hp && hp.value !== '') return;
+
+        formError.classList.remove('show');
+        formError.textContent = '';
 
         var name = document.getElementById('fullName').value.trim();
         var first = name.split(' ')[0] || 'there';
@@ -1252,7 +1257,7 @@
         submit.disabled = true;
         submit.textContent = 'Sending...';
 
-        fetch('https://formspree.io/f/__SWAP_FORMSPREE_ID__', {
+        fetch('https://formspree.io/f/xzdqkdaw', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
           body: JSON.stringify({
@@ -1276,7 +1281,8 @@
         }).catch(function () {
           submit.disabled = false;
           submit.textContent = 'Send My Request';
-          alert('Something went wrong. Please email hello@newbeginningsdsc.com and we\'ll get right back to you.');
+          formError.textContent = 'Something went wrong. Please email hello@newbeginningsdsc.com or try again.';
+          formError.classList.add('show');
         });
       });
 
