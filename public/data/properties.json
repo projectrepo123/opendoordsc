@@ -1,0 +1,81 @@
+{
+  "schemaVersion": 1,
+  "properties": [
+    {
+      "id": "henrietta",
+      "name": "3214 Henrietta",
+      "url": "/stay/henrietta/",
+      "tagline": "Spacious two-story home, hardwood floors, room to spread out",
+      "bestFor": "Family reunions",
+      "hostNote": "This one books fast on holiday weekends. Request your dates early.",
+      "status": "available",
+      "featured": true,
+      "location": { "label": "Missouri" },
+      "capacity": { "guests": 8, "bedrooms": 4, "beds": 5, "baths": 2 },
+      "price": { "amount": null, "currency": "USD", "unit": "night", "note": null },
+      "description": "A full two-story home with real space to breathe. Hardwood floors throughout the main level, a large living room, and a separate dining area that seats a crowd.\n\nUpstairs has a cozy sitting nook plus the bedrooms. Cleaned top to bottom before every stay. Self check-in. Nichole is a text away if you need anything.",
+      "amenities": ["Hardwood floors", "Full kitchen", "Multiple living areas", "Fast Wi-Fi", "Free parking", "Washer & dryer", "Self check-in", "Ceiling fans"],
+      "images": [
+        { "src": "images/properties/henrietta/5V4A9042.jpg", "alt": "3214 Henrietta exterior", "featured": true },
+        { "src": "images/properties/henrietta/5V4A9054.jpg", "alt": "Living room" },
+        { "src": "images/properties/henrietta/5V4A9080.jpg", "alt": "Dining area" },
+        { "src": "images/properties/henrietta/5V4A9097.jpg", "alt": "Upstairs sitting area" },
+        { "src": "images/properties/henrietta/F66A2784.jpg", "alt": "Interior, updated lighting" },
+        { "src": "images/properties/henrietta/F66A2793.jpg", "alt": "Interior, updated lighting" }
+      ],
+      "unavailableDates": [],
+      "booking": { "type": "inquiry", "url": null, "embed": null }
+    },
+    {
+      "id": "townhouse",
+      "name": "The Townhouse",
+      "url": "/stay/townhouse/",
+      "tagline": "Elegant multi-level townhouse, styled and move-in ready",
+      "bestFor": "Couples retreat",
+      "hostNote": "The media room upstairs is a highlight. Guests always mention it.",
+      "status": "available",
+      "featured": false,
+      "location": { "label": "Missouri" },
+      "capacity": { "guests": 4, "bedrooms": 2, "beds": 2, "baths": 2 },
+      "price": { "amount": null, "currency": "USD", "unit": "night", "note": null },
+      "description": "A well-appointed townhouse across multiple levels. The main floor has a bright living area with designer touches throughout. Head upstairs to the private media room: big screen, comfortable seating, set up for a night in.\n\nTwo full bathrooms, self check-in, and everything you need already stocked. Nichole takes care of the details so you don't have to.",
+      "amenities": ["Smart TV & media room", "2 full bathrooms", "Fast Wi-Fi", "Free parking", "Self check-in", "Designer furnishings", "Multiple floors", "Fully stocked"],
+      "images": [
+        { "src": "images/properties/townhouse/F66A9477.jpg", "alt": "The Townhouse living room", "featured": true },
+        { "src": "images/properties/townhouse/F66A9490.jpg", "alt": "Media room" },
+        { "src": "images/properties/townhouse/F66A9495.jpg", "alt": "Bathroom" },
+        { "src": "images/properties/townhouse/F66A9481.jpg", "alt": "Half bath" },
+        { "src": "images/properties/townhouse/F66A9485.jpg", "alt": "Interior" },
+        { "src": "images/properties/townhouse/F66A9502.jpg", "alt": "Interior" }
+      ],
+      "unavailableDates": [],
+      "booking": { "type": "inquiry", "url": null, "embed": null }
+    },
+    {
+      "id": "beachbound",
+      "name": "Beach Bound",
+      "url": "/stay/beachbound/",
+      "tagline": "Lake-area retreat, bunk beds, room for the whole crew",
+      "bestFor": "Family getaway",
+      "hostNote": "Great spot for big groups. The sleeping setup handles the whole crew.",
+      "status": "available",
+      "featured": false,
+      "location": { "label": "Missouri" },
+      "capacity": { "guests": 8, "bedrooms": 3, "beds": 5, "baths": 2 },
+      "price": { "amount": null, "currency": "USD", "unit": "night", "note": null },
+      "description": "A roomy lake-area getaway built for groups. Bunk beds, trundle setup, and plenty of common space mean everyone fits comfortably.\n\nClose to the lakes and outdoor spots you came for. Cleaned top to bottom before every stay. Self check-in. Nichole is a text away if you need anything.",
+      "amenities": ["Bunk beds", "Full kitchen", "Fast Wi-Fi", "Free parking", "Self check-in", "Multiple sleeping areas", "Washer & dryer", "Outdoor space"],
+      "images": [
+        { "src": "images/properties/beachbound/OONt4Xro.jpg", "alt": "Gulf Highlands Beach Resort entrance sign", "featured": true },
+        { "src": "images/properties/beachbound/Cover.webp", "alt": "Beach Bound exterior" },
+        { "src": "images/properties/beachbound/inside-full.jpg", "alt": "Interior" },
+        { "src": "images/properties/beachbound/inside-front-door.jpg", "alt": "Front entry" },
+        { "src": "images/properties/beachbound/IMG_0601.jpg", "alt": "Interior" },
+        { "src": "images/properties/beachbound/6.jpg", "alt": "Bedroom" },
+        { "src": "images/properties/beachbound/bunk-back.jpg", "alt": "Bunk beds" }
+      ],
+      "unavailableDates": [],
+      "booking": { "type": "inquiry", "url": null, "embed": null }
+    }
+  ]
+}

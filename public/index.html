@@ -1,0 +1,1287 @@
+﻿<!--
+  ============================================================
+  TEMPLATE: Short-Term / Vacation Property Rentals
+  JB Web Co. — jbwebco.com
+  ============================================================
+  Business Name: New Beginnings DSC
+  Owner / Host: Nichole
+  ------------------------------------------------------------
+  VOICE RULES
+    Brand voice ("we / our") on the hero, CTAs, feature cards, and footer.
+    Nichole's first-person ("I / my") inside About and FAQ.
+    No triadic comma-and lists. No em dashes in user-facing copy. Contractions OK.
+  ------------------------------------------------------------
+  SWAP-IN CHECKLIST (search for __SWAP__ to find each spot):
+   1. Formspree endpoint. Replace __SWAP_FORMSPREE_ID__ in the
+      inquiry fetch() with the real form ID.
+   2. Logo. Replace the inline .brand-mark SVG + wordmark with
+      Nichole's logo <img> in the nav, mobile menu, and footer.
+   3. Photos. Drop real JPGs into images/properties/ (same names)
+      and update images[] in data/properties.json.
+   4. Real copy. Hero, About-Nichole bio, FAQ, listing text.
+   5. Domain. Update canonical + og:url (https://newbeginningsdsc.com/),
+      robots.txt, and sitemap.xml once the real domain is set.
+   6. Contact. Email and phone in the footer + the JSON-LD below.
+   7. Listings are data-driven. Edit data/properties.json to add,
+      remove, hide (status), or feature a stay. Add booked date ranges
+      to unavailableDates to mark them on the per-stay calendar.
+  ============================================================
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>New Beginnings DSC | Short-Term Property Rentals in Missouri</title>
+  <meta name="description" content="Short-term property rentals across Missouri. Comfortable places, easy check-in, and quick answers from a real host. Browse our stays.">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="New Beginnings DSC">
+  <link rel="canonical" href="https://newbeginningsdsc.com/">
+
+  <meta property="og:title" content="New Beginnings DSC | Short-Term Property Rentals">
+  <meta property="og:description" content="Short-term stays across Missouri. Clean places, easy check-in, and a host who picks up the phone.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://newbeginningsdsc.com/">
+  <meta property="og:image" content="https://newbeginningsdsc.com/og-share.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:site_name" content="New Beginnings DSC">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="New Beginnings DSC | Short-Term Property Rentals">
+  <meta name="twitter:description" content="Short-term stays across Missouri. Clean places, easy check-in, and a host who picks up the phone.">
+  <meta name="twitter:image" content="https://newbeginningsdsc.com/og-share.png">
+
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://formspree.io; frame-src 'none'; base-uri 'self'; form-action https://formspree.io">
+
+  <meta name="theme-color" content="#2d6a2d">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,400..700,50..100&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,400..700,50..100&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"></noscript>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LodgingBusiness",
+    "name": "New Beginnings DSC",
+    "description": "Short-term property rentals across Missouri. Comfortable places, easy check-in, and quick answers from a real host.",
+    "image": "https://newbeginningsdsc.com/og-share.png",
+    "url": "https://newbeginningsdsc.com/",
+    "email": "hello@newbeginningsdsc.com",
+    "priceRange": "$$",
+    "areaServed": { "@type": "State", "name": "Missouri" }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "How do I book a stay?", "acceptedAnswer": { "@type": "Answer", "text": "Pick a stay, send your dates through the form. I'll confirm availability and book you in. Usually same day." } },
+      { "@type": "Question", "name": "What are check-in and check-out like?", "acceptedAnswer": { "@type": "Answer", "text": "Most of my places offer self check-in. You'll get arrival instructions a day or two before your trip." } },
+      { "@type": "Question", "name": "Are pets allowed?", "acceptedAnswer": { "@type": "Answer", "text": "Some of my homes welcome pets. Look for the 'Pet friendly' tag and tell me about your dog (or cat, or other) in the request." } },
+      { "@type": "Question", "name": "What is your cancellation policy?", "acceptedAnswer": { "@type": "Answer", "text": "Cancellation terms go out with your booking confirmation. If plans change, just reach out and I'll do what I can." } }
+    ]
+  }
+  </script>
+
+  <style>
+    /* ─── TOKENS ─── */
+    :root {
+      --brand-green: #2d6a2d;
+      --brand-green-deep: #1e4d1e;
+      --brand-green-light: #f0f5f0;
+      --brand-yellow: #f4c95a;
+      --brand-yellow-deep: #e0b040;
+      --brand-clay: #d96b4a;
+      --paper: #fafafa;
+      --ink: #1c2422;
+      --ink-muted: #5a6661;
+      --paper-deep: #faf5ea;
+      --line: rgba(45,106,45,0.16);
+      --radius: 16px;
+      --radius-lg: 24px;
+      --radius-pill: 50px;
+      --shadow-soft: 0 12px 30px rgba(30,77,30,0.10);
+      --shadow-hover: 0 20px 48px rgba(30,77,30,0.18);
+    }
+
+    /* ─── RESET ─── */
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; overflow-x: hidden; }
+    body {
+      font-family: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      font-size: 17px; line-height: 1.7; color: var(--ink); background: var(--paper);
+      overflow-x: hidden; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;
+      position: relative;
+    }
+    /* Paper-grain noise overlay across the whole site */
+    body::before {
+      content: ''; position: fixed; inset: 0; z-index: 0; pointer-events: none;
+      opacity: 0.04; mix-blend-mode: multiply;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      background-size: 256px 256px;
+    }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+    h1, h2, h3, h4 { font-family: 'Fraunces', Georgia, serif; font-weight: 500; line-height: 1.15; letter-spacing: -0.015em; color: var(--ink); font-variation-settings: "opsz" 144, "SOFT" 70; }
+
+    .eyebrow { font-family: 'Inter', sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--brand-green); margin-bottom: 18px; display: inline-block; padding-bottom: 5px; border-bottom: 2px solid var(--brand-green); }
+    .section-headline { font-size: clamp(36px, 5.3vw, 56px); margin-bottom: 14px; font-variation-settings: "opsz" 144, "SOFT" 80; }
+    .section-sub { font-family: 'Inter'; font-size: 18px; color: var(--ink-muted); max-width: 620px; }
+
+    .container { max-width: 1180px; margin: 0 auto; padding: 0 24px; position: relative; z-index: 1; }
+    section { padding: 96px 0; scroll-margin-top: 96px; position: relative; z-index: 1; }
+    .section-head { text-align: center; max-width: 700px; margin: 0 auto 56px; }
+    .section-head .section-sub { margin: 0 auto; }
+
+    /* ─── BUTTONS ─── */
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 12px 26px; border-radius: var(--radius-pill);
+      font-family: 'Inter', sans-serif; font-size: 15px; font-weight: 600; letter-spacing: 0.02em;
+      cursor: pointer; border: 1.5px solid transparent; min-height: 46px;
+      position: relative; overflow: hidden;
+      transition: transform 150ms ease, box-shadow 150ms ease, background 150ms ease, border-color 150ms ease, color 150ms ease;
+    }
+    .btn-primary {
+      background: linear-gradient(160deg, #3a7f3a 0%, var(--brand-green) 50%, #265426 100%);
+      color: #fff; border-color: rgba(255,255,255,0.16);
+      box-shadow:
+        inset 0 1.5px 0 rgba(255,255,255,0.3),
+        inset 0 -1px 0 rgba(0,0,0,0.1),
+        0 1px 3px rgba(45,106,45,0.32),
+        0 4px 14px rgba(45,106,45,0.22),
+        0 10px 28px rgba(45,106,45,0.1);
+    }
+    .btn-primary:hover {
+      background: linear-gradient(160deg, #4a8c4a 0%, #3a7f3a 50%, #2d6a2d 100%);
+      transform: translateY(-1.5px);
+      box-shadow:
+        inset 0 1.5px 0 rgba(255,255,255,0.3),
+        inset 0 -1px 0 rgba(0,0,0,0.1),
+        0 2px 6px rgba(45,106,45,0.36),
+        0 8px 22px rgba(45,106,45,0.28),
+        0 20px 42px rgba(45,106,45,0.14);
+      border-color: rgba(255,255,255,0.2);
+    }
+    .btn-primary:active { transform: scale(0.98) translateY(0); box-shadow: inset 0 1px 0 rgba(255,255,255,0.18), inset 0 -1px 0 rgba(0,0,0,0.1), 0 1px 3px rgba(45,106,45,0.25); }
+    .btn-primary::after {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.5), transparent);
+      transform: translateX(-100%); transition: transform .38s ease;
+    }
+    .btn-primary:hover::after { transform: translateX(100%); }
+    .btn-ghost {
+      background: transparent;
+      border: 2px solid var(--brand-green);
+      color: var(--brand-green);
+    }
+    .btn-ghost:hover {
+      background: rgba(45,106,45,0.06);
+      color: var(--brand-green);
+      transform: translateY(-1.5px);
+      border-color: var(--brand-green);
+    }
+    .btn-ghost:active { transform: scale(0.98); }
+    .btn-block { width: 100%; }
+    a:focus-visible, .btn:focus-visible, button:focus-visible, select:focus-visible, input:focus-visible, textarea:focus-visible {
+      outline: 3px solid var(--brand-clay); outline-offset: 2px;
+    }
+
+    /* ─── SKIP LINK ─── */
+    .skip-link { position: absolute; left: -9999px; }
+    .skip-link:focus { position: fixed; top: 8px; left: 8px; z-index: 10000; background: var(--brand-clay); color: #fff; padding: 12px 22px; border-radius: var(--radius); font-weight: 600; }
+
+    /* ─── ANNOUNCEMENT BAR ─── */
+    .announcement-bar {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 1001;
+      background: var(--brand-green-deep); color: #fff; text-align: center;
+      font-size: 13px; font-weight: 500; padding: 8px 52px 8px 24px; letter-spacing: .2px;
+    }
+    .announcement-bar a { color: var(--brand-yellow); text-decoration: underline; text-underline-offset: 2px; font-weight: 600; }
+    .announcement-bar .bar-short { display: none; }
+    .announcement-bar-close { position: absolute; right: 8px; top: 50%; transform: translateY(-50%); background: none; border: none; color: rgba(255,255,255,.85); font-size: 18px; cursor: pointer; min-width: 32px; min-height: 32px; display: flex; align-items: center; justify-content: center; }
+    .announcement-bar-close:hover { color: #fff; }
+    .announcement-bar.dismissed { display: none; }
+
+    /* ─── NAV ─── */
+    .nav { position: fixed; top: 38px; left: 0; right: 0; z-index: 1010; padding: 0; background: transparent; transition: top .3s ease, background .3s ease, padding .3s ease, box-shadow .3s ease; }
+    .nav.scrolled { background: rgba(255,255,255,.96); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); padding: 0; box-shadow: 0 4px 24px rgba(30,77,30,.08); }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; max-width: 1180px; margin: 0 auto; padding: 0 24px; }
+    .nav-brand { display: flex; align-items: center; gap: 10px; }
+    .nav-logo { height: 140px; width: auto; flex-shrink: 0; display: block; margin: -40px 0; }
+    .footer-brand .nav-logo { height: 140px; margin: 0; }
+    .mobile-menu .nav-logo { height: 180px; }
+    .nav-links { display: flex; align-items: center; gap: 30px; list-style: none; }
+    .nav-links a { font-size: 15px; font-weight: 500; color: var(--ink-muted); transition: color .25s ease; }
+    .nav-links a:hover { color: var(--brand-green); }
+    .nav-cta {
+      color: #fff !important;
+      background: linear-gradient(160deg, #3a7f3a 0%, var(--brand-green) 50%, #265426 100%);
+      padding: 9px 20px; border-radius: var(--radius-pill);
+      border: 1px solid rgba(255,255,255,0.2) !important;
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,0.3),
+        0 4px 14px rgba(45,106,45,0.35),
+        0 1px 4px rgba(0,0,0,0.1);
+      font-size: 15px; font-weight: 600; letter-spacing: 0.02em;
+      transition: transform 120ms ease, box-shadow 120ms ease;
+    }
+    .nav-cta:hover {
+      transform: translateY(-1px);
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,0.35),
+        0 6px 18px rgba(45,106,45,0.45);
+    }
+    .nav-cta:active { transform: scale(0.97); }
+
+    .hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 10px; min-width: 44px; min-height: 44px; justify-content: center; align-items: center; z-index: 1010; }
+    .hamburger span { display: block; width: 24px; height: 2px; border-radius: 2px; background: var(--ink); transition: transform .3s ease, opacity .3s ease, background .3s ease; }
+    .hamburger.active span { background: #fff; }
+    .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+    .hamburger.active span:nth-child(2) { opacity: 0; }
+    .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+    .mobile-menu {
+      display: none; position: fixed; inset: 0; z-index: 1005; flex-direction: column; align-items: center; justify-content: center; gap: 6px;
+      background: linear-gradient(160deg, rgba(30,77,30,.85) 0%, rgba(20,46,20,.92) 100%), url('/images/properties/henrietta/5V4A9042.jpg') center/cover no-repeat;
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu-brand { margin-bottom: 28px; }
+    .mobile-menu a { font-family: 'Fraunces', Georgia, serif; font-size: 2.5rem; font-weight: 500; color: rgba(255,255,255,.92); padding: 12px 28px; min-height: 56px; display: flex; align-items: center; font-variation-settings: "opsz" 144, "SOFT" 70; }
+    .mobile-menu a:hover { color: var(--brand-yellow); }
+    .mobile-menu a.btn {
+      margin-top: 18px; font-family: 'Inter', sans-serif; font-size: 15px; font-weight: 600;
+      letter-spacing: 0.02em; padding: 12px 26px; min-height: 46px; font-variation-settings: normal;
+    }
+
+    /* ─── HERO (asymmetric two-column) ─── */
+    .hero { padding: calc(var(--header-offset, 112px) + 56px) 0 80px; background: var(--paper); position: relative; overflow: hidden; }
+    .hero-grid { display: grid; grid-template-columns: 1.05fr 1fr; gap: 56px; align-items: center; }
+    .hero-grid > * { min-width: 0; }
+    .hero-text { position: relative; min-width: 0; }
+    .hero h1 { font-size: clamp(34px, 7.5vw, 86px); font-weight: 500; line-height: 1.02; letter-spacing: -0.025em; margin-bottom: 22px; overflow-wrap: break-word; word-break: break-word; font-variation-settings: "opsz" 144, "SOFT" 90; }
+    .hero h1 .word-home { position: relative; display: inline-block; }
+    .hero-underline { position: absolute; left: 0; bottom: -6px; width: 100%; height: 14px; overflow: visible; }
+    .hero-underline path { stroke-dasharray: 240; stroke-dashoffset: 240; animation: underline-draw 1.2s ease-out 0.4s forwards; }
+    .hero-sub { font-size: clamp(17px, 2vw, 19px); color: var(--ink-muted); max-width: 480px; margin-bottom: 32px; }
+    .hero-ctas { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 30px; }
+    .hero-trust { font-size: 13px; color: var(--ink-muted); line-height: 1.7; max-width: 100%; }
+    .hero-trust .sep { color: var(--brand-green); margin: 0 8px; font-weight: 700; }
+    .hero-art { position: relative; aspect-ratio: 4/5; border-radius: 28px; overflow: hidden; box-shadow: var(--shadow-soft); border: 1px solid var(--line); background: var(--paper-deep); }
+    .hero-art svg { width: 100%; height: 100%; display: block; }
+    .hero-art img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    /* ─── HERO COLLAGE ─── */
+    .hero-collage { width: 100%; height: 100%; display: grid; grid-template-columns: 3fr 2fr; gap: 5px; }
+    .hero-collage-main { overflow: hidden; }
+    .hero-collage-main img { width: 100%; height: 100%; object-fit: cover; object-position: center; }
+    .hero-collage-side { display: flex; flex-direction: column; gap: 5px; }
+    .hero-collage-item { flex: 1; overflow: hidden; }
+    .hero-collage-item img { width: 100%; height: 100%; object-fit: cover; }
+    /* ─── HERO SLOGAN OVERLAY ─── */
+    .hero-slogan-overlay {
+      position: absolute; top: 0; left: 0; right: 0; z-index: 3;
+      padding: 22px 20px 56px;
+      background: linear-gradient(to bottom, rgba(0,0,0,0.52) 0%, transparent 100%);
+      font-family: 'Fraunces', Georgia, serif; font-size: 15px; font-weight: 400;
+      font-style: italic; color: rgba(255,255,255,0.92); letter-spacing: 0.02em;
+      font-variation-settings: "opsz" 144, "SOFT" 80; pointer-events: none;
+    }
+    .hero-blob-clay { position: absolute; width: 280px; height: 280px; right: -80px; bottom: -100px; background: radial-gradient(circle, rgba(45,106,45,.35), transparent 70%); filter: blur(60px); z-index: 0; pointer-events: none; }
+    .hero-blob-sun { position: absolute; width: 140px; height: 140px; left: -40px; top: -20px; background: radial-gradient(circle, rgba(245,210,0,.45), transparent 70%); filter: blur(40px); z-index: 0; pointer-events: none; }
+    .hero-art-wrap { position: relative; }
+    .hosted-pill {
+      position: absolute; left: 18px; bottom: 18px;
+      background: rgba(255,255,255,0.74);
+      border: 1px solid rgba(255,255,255,0.88);
+      border-radius: var(--radius-pill); padding: 9px 16px 9px 11px;
+      backdrop-filter: blur(28px) saturate(1.6); -webkit-backdrop-filter: blur(28px) saturate(1.6);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.95), inset 0 -1px 0 rgba(0,0,0,0.03), 0 1px 3px rgba(0,0,0,0.08), 0 6px 18px rgba(0,0,0,0.07);
+      display: inline-flex; align-items: center; gap: 7px;
+      font-size: 13.5px; font-weight: 600; letter-spacing: 0.01em; color: var(--ink); z-index: 2;
+    }
+    .hosted-pill svg { width: 17px; height: 17px; flex-shrink: 0; }
+    .scroll-cue { display: inline-flex; flex-direction: column; align-items: center; gap: 6px; margin-top: 12px; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--ink-muted); font-weight: 600; }
+    .scroll-cue-line { width: 1px; height: 40px; background: var(--line); position: relative; overflow: hidden; }
+    .scroll-cue-line::after { content: ''; position: absolute; left: -1.5px; top: -8px; width: 4px; height: 8px; border-radius: 2px; background: var(--brand-green); animation: scroll-dot 2.4s ease-in-out infinite; }
+
+    /* ─── SECTION DIVIDER (torn paper) ─── */
+    .section-divider { display: block; width: 100%; height: 50px; position: relative; z-index: 1; margin-bottom: -1px; }
+    .section-divider svg { display: block; width: 100%; height: 100%; }
+    .next-paper-deep { fill: var(--paper-deep); }
+    .next-paper { fill: var(--paper); }
+    .next-teal-deep { fill: var(--brand-green-deep); }
+
+    /* ─── STAYS ─── */
+    .stays { background: var(--brand-green-light); }
+    .stays-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .stay-card { background: #fff; border: 1px solid var(--line); border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-soft); display: flex; flex-direction: column; transition: transform .24s cubic-bezier(.2,.7,.2,1), box-shadow .24s ease; position: relative; }
+    .stay-card:hover { transform: translateY(-4px) rotate(-0.4deg); box-shadow: var(--shadow-hover); }
+    .stay-media { position: relative; display: block; aspect-ratio: 3/2; overflow: hidden; }
+    .stay-media img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s ease; }
+    .stay-card:hover .stay-media img { transform: scale(1.05); }
+    .stay-badge {
+      position: absolute; top: 14px; left: 14px;
+      background: linear-gradient(135deg, #f7d168 0%, #f0bc38 100%);
+      color: var(--ink);
+      font-family: 'Inter', sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 1.1px; text-transform: uppercase;
+      padding: 5px 13px; border-radius: var(--radius-pill);
+      border: 1px solid rgba(255,255,255,0.45);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.5), inset 0 -1px 0 rgba(0,0,0,0.06), 0 1px 3px rgba(0,0,0,0.1), 0 3px 10px rgba(0,0,0,0.07);
+    }
+    .stay-card.in-view .stay-badge { animation: badge-pulse-once .9s ease-out 1; }
+    .stay-body { padding: 22px 22px 24px; display: flex; flex-direction: column; flex: 1; }
+    .stay-loc { display: flex; align-items: center; gap: 6px; font-family: 'Inter'; font-size: 12px; font-weight: 700; color: var(--brand-green); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; }
+    .stay-loc svg { width: 13px; height: 13px; }
+    .stay-body h3 { font-size: 22px; margin-bottom: 6px; font-weight: 500; }
+    .stay-body h3 a:hover { color: var(--brand-green); }
+    .stay-tagline { font-family: 'Inter'; color: var(--ink-muted); font-size: 15.5px; margin-bottom: 16px; }
+    .stay-meta { font-family: 'Inter'; font-size: 14px; color: var(--ink-muted); font-weight: 600; padding-top: 14px; border-top: 1px solid var(--line); margin-bottom: 16px; }
+    .stay-foot { margin-top: auto; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+    .stay-price { font-family: 'Fraunces', Georgia, serif; font-weight: 600; color: var(--ink); font-size: 22px; }
+    .stay-price span { font-family: 'Inter', sans-serif; font-weight: 400; font-size: 13px; color: var(--ink-muted); }
+    .stay-foot .btn { padding: 10px 20px; min-height: 44px; font-size: 14px; }
+
+    /* Featured card: spans 2 columns with horizontal layout (desktop) */
+    .stay-card--feature { grid-column: span 2; display: grid; grid-template-columns: 1fr 1fr; gap: 0; }
+    .stay-card--feature .stay-media { aspect-ratio: auto; height: 100%; min-height: 320px; }
+    .stay-card--feature .stay-body { padding: 36px 34px; }
+    .stay-card--feature .stay-body h3 { font-size: clamp(22px, 1.6vw, 26px); margin-bottom: 8px; }
+    .stay-card--feature .stay-tagline { font-size: 17px; margin-bottom: 22px; }
+    .stay-card--feature .stay-price { font-size: 28px; }
+
+    .stays-empty { grid-column: 1 / -1; text-align: center; background: rgba(45,106,45,0.04); border: 1px dashed var(--line); border-radius: var(--radius-lg); padding: 48px 24px; color: var(--ink-muted); }
+    .stays-note { text-align: center; color: var(--ink-muted); margin-top: 40px; font-size: 16px; }
+    .stays-note a { color: var(--brand-green); font-weight: 700; }
+
+    /* ─── WHY (teal wash, 4-card grid, vertical stagger on desktop) ─── */
+    .why { background: #ffffff; }
+    .why-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+    .why-card { background: #fff; border: 1px solid rgba(45,106,45,0.1); border-radius: var(--radius-lg); padding: 30px 24px; text-align: center; box-shadow: 0 2px 12px rgba(0,0,0,0.05); }
+    @media (min-width: 1024px) {
+      .why-card:nth-child(2), .why-card:nth-child(4) { transform: translateY(28px); }
+    }
+    .why-icon-tile { width: 56px; height: 56px; margin: 0 auto 18px; display: flex; align-items: center; justify-content: center; border-radius: 14px; background: rgba(244,201,90,0.18); }
+    .why-icon-tile svg { width: 24px; height: 24px; }
+    .why-card h3 { font-size: 19px; margin-bottom: 8px; font-weight: 500; }
+    .why-card p { font-family: 'Inter'; font-size: 15px; color: var(--ink-muted); line-height: 1.65; }
+
+    /* ─── ABOUT (asymmetric, illustrated portrait placeholder) ─── */
+    .about { background: var(--brand-green-light); }
+    .about-grid { max-width: 640px; margin: 0 auto; text-align: center; }
+    .about-portrait { width: 128px; height: 128px; margin: 0 auto 24px; border-radius: 50%; overflow: hidden; box-shadow: var(--shadow-soft); border: 4px solid #fff; }
+    .about-portrait img { width: 100%; height: 100%; object-fit: cover; object-position: top center; display: block; }
+    .about-text { text-align: left; }
+    .about-text p { font-family: 'Inter'; color: var(--ink-muted); font-size: 17px; margin-bottom: 16px; }
+    .about-text p strong { color: var(--ink); font-weight: 600; }
+    .about-stats { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 28px; }
+    .about-stat {
+      display: flex; flex-direction: column; align-items: center; min-width: 120px;
+      background: rgba(255,255,255,0.7);
+      border: 1px solid rgba(45,106,45,0.2);
+      border-radius: var(--radius-pill);
+      padding: 14px 20px;
+      backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.9), 0 2px 8px rgba(0,0,0,0.06);
+      text-align: center;
+    }
+    .about-stat .num { font-family: 'Fraunces', Georgia, serif; font-size: 1.5rem; font-weight: 700; font-variation-settings: "opsz" 72; color: var(--brand-green); line-height: 1; margin-bottom: 4px; }
+    .about-stat .lbl { font-family: 'Inter'; font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(28,36,34,0.6); }
+
+    /* ─── FAQ ─── */
+    .faq { background: #ffffff; }
+    .faq-list { max-width: 760px; margin: 0 auto; }
+    .faq-item { border: 1px solid var(--line); border-radius: var(--radius); margin-bottom: 14px; overflow: hidden; background: var(--paper); }
+    .faq-item summary { cursor: pointer; list-style: none; padding: 20px 24px; font-family: 'Fraunces', Georgia, serif; font-weight: 500; font-size: 19px; display: flex; justify-content: space-between; align-items: center; gap: 16px; color: var(--ink); }
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-item summary::after { content: '+'; font-family: 'Inter'; font-size: 24px; color: var(--brand-green); transition: transform .25s ease; line-height: 1; }
+    .faq-item[open] summary::after { transform: rotate(45deg); }
+    .faq-item .faq-answer { padding: 0 24px 20px; color: var(--ink-muted); font-family: 'Inter'; }
+
+    /* ─── INQUIRY ─── */
+    .inquiry { background: var(--paper); }
+    /* Booking path chooser */
+    .booking-paths { max-width: 660px; margin: 0 auto 40px; }
+    .booking-path { background: #fff; border: 1px solid var(--line); border-radius: var(--radius-lg); padding: 28px 24px; box-shadow: var(--shadow-soft); text-align: center; }
+    .booking-path h3 { font-size: 18px; font-weight: 500; margin-bottom: 8px; }
+    .booking-path p { font-family: 'Inter'; font-size: 14px; color: var(--ink-muted); line-height: 1.6; margin-bottom: 18px; }
+    .booking-path--request h3 { color: var(--ink); }
+    .inquiry-form { max-width: 660px; margin: 0 auto; background: #fff; border: 1px solid var(--line); border-radius: var(--radius-lg); padding: 36px; box-shadow: var(--shadow-soft); }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    .form-group { margin-bottom: 18px; }
+    .form-group label { display: block; font-family: 'Inter'; font-size: 14px; font-weight: 600; color: var(--ink); margin-bottom: 6px; }
+    .form-group input, .form-group select, .form-group textarea {
+      width: 100%; background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius);
+      padding: 13px 15px; min-height: 48px; font-family: 'Inter', sans-serif; font-size: 16px; color: var(--ink);
+      transition: border-color .25s ease, box-shadow .25s ease, background .25s ease; outline: none;
+    }
+    .form-group textarea { min-height: 120px; resize: vertical; }
+    .form-group select { appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%235a6661' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 14px center; padding-right: 42px; cursor: pointer; }
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--brand-green); box-shadow: 0 0 0 3px rgba(45,106,45,.15); background: #fff; }
+    .form-note { text-align: center; font-size: 14px; color: var(--ink-muted); margin-top: 14px; }
+    .form-note a { color: var(--brand-green); font-weight: 600; }
+    .hp-field { position: absolute; left: -9999px; top: -9999px; width: 0; height: 0; opacity: 0; z-index: -1; }
+    .form-success { display: none; text-align: center; padding: 36px 16px; }
+    .form-success.show { display: block; }
+    .form-success .check { width: 64px; height: 64px; border-radius: 50%; background: var(--brand-yellow-soft); color: var(--brand-green); font-size: 30px; display: flex; align-items: center; justify-content: center; margin: 0 auto 18px; }
+    .form-success h3 { font-size: 26px; margin-bottom: 8px; font-weight: 500; }
+    .form-success p { color: var(--ink-muted); }
+
+    /* ─── FOOTER ─── */
+    .footer { background: var(--brand-green-deep); color: #fff; padding: 56px 0 0; position: relative; z-index: 1; border-top: 3px solid var(--brand-yellow); }
+    .footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 44px; padding-bottom: 36px; border-bottom: 1px solid rgba(255,255,255,.1); }
+    .footer-brand { font-family: 'Fraunces', Georgia, serif; font-size: 24px; font-weight: 500; margin-bottom: 10px; display: flex; align-items: center; gap: 10px; }
+    .footer-tagline { color: rgba(255,255,255,.7); font-size: 15px; margin-bottom: 14px; font-family: 'Inter'; font-style: italic; }
+    .footer-info { color: rgba(255,255,255,.55); font-size: 14px; line-height: 1.8; font-family: 'Inter'; }
+    .footer h4 { font-size: 14px; font-weight: 600; margin-bottom: 14px; color: rgba(255,255,255,.85); font-family: 'Inter'; letter-spacing: 1px; text-transform: uppercase; }
+    .footer-links { list-style: none; }
+    .footer-links li { margin-bottom: 9px; }
+    .footer-links a, .footer-contact a { color: rgba(255,255,255,.7); font-size: 15px; font-family: 'Inter'; transition: color .25s ease; }
+    .footer-links a:hover, .footer-contact a:hover { color: var(--brand-yellow); }
+    .footer-contact p { color: rgba(255,255,255,.7); font-size: 15px; margin-bottom: 8px; font-family: 'Inter'; }
+    .footer-bottom { padding: 20px 0; text-align: center; font-size: 13px; color: rgba(255,255,255,.55); font-family: 'Inter'; }
+    .footer-bottom a { color: rgba(255,255,255,.7); }
+    .footer-bottom a:hover { color: #fff; }
+
+    /* ─── REVEAL (with stagger via data-stagger) ─── */
+    .reveal { opacity: 0; transform: translateY(32px); transition: opacity .55s ease, transform .55s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+
+    /* ─── MOTION KIT ─── */
+    @keyframes underline-draw { to { stroke-dashoffset: 0; } }
+    @keyframes badge-pulse-once {
+      0% { transform: scale(1); box-shadow: 0 4px 14px rgba(0,0,0,.08); }
+      40% { transform: scale(1.08); box-shadow: 0 6px 20px rgba(244,201,90,.6); }
+      100% { transform: scale(1); box-shadow: 0 4px 14px rgba(0,0,0,.08); }
+    }
+    @keyframes scroll-dot {
+      0% { top: -8px; opacity: 0; }
+      30% { opacity: 1; }
+      80% { opacity: 1; }
+      100% { top: 40px; opacity: 0; }
+    }
+    /* ─── NATURE SIDE PANELS ─── */
+    .nature-panel {
+      position: fixed; top: 0; bottom: 0;
+      width: 22vw; max-width: 340px;
+      z-index: 0; pointer-events: none;
+      background-size: cover; background-repeat: no-repeat;
+    }
+    .nature-panel--left {
+      left: 0;
+      background-image: url('/images/ocean.jpg');
+      background-position: center center;
+      -webkit-mask-image: linear-gradient(to right, black 0%, rgba(0,0,0,0.75) 35%, rgba(0,0,0,0.2) 70%, transparent 100%);
+      mask-image: linear-gradient(to right, black 0%, rgba(0,0,0,0.75) 35%, rgba(0,0,0,0.2) 70%, transparent 100%);
+    }
+    .nature-panel--right {
+      right: 0;
+      background-image: url('/images/ForestEvergreen.jpg');
+      background-position: right center;
+      -webkit-mask-image: linear-gradient(to left, black 0%, rgba(0,0,0,0.75) 35%, rgba(0,0,0,0.2) 70%, transparent 100%);
+      mask-image: linear-gradient(to left, black 0%, rgba(0,0,0,0.75) 35%, rgba(0,0,0,0.2) 70%, transparent 100%);
+    }
+    @media (max-width: 1100px) { .nature-panel { width: 14vw; } }
+    @media (max-width: 800px) { .nature-panel { display: none; } }
+
+    /* ─── HERO STAT PILLS ─── */
+    .hero-stats { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 28px; }
+    .hero-stat-pill {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: rgba(255,255,255,0.7);
+      border: 1px solid rgba(45,106,45,0.2);
+      border-radius: var(--radius-pill); padding: 8px 16px;
+      font-family: 'Inter', sans-serif; font-size: 0.85rem; font-weight: 600; letter-spacing: 0.01em; color: var(--ink);
+      backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.9), 0 2px 8px rgba(0,0,0,0.06);
+    }
+
+    /* ─── STAY BEST-FOR TAG ─── */
+    .stay-best-for {
+      display: inline-flex; align-items: center; gap: 5px;
+      background: linear-gradient(135deg, rgba(244,201,90,0.28) 0%, rgba(244,201,90,0.10) 100%);
+      border: 1px solid rgba(224,176,64,0.4);
+      border-radius: var(--radius-pill); padding: 4px 11px 4px 9px;
+      font-family: 'Inter', sans-serif; font-size: 11px; font-weight: 700; color: var(--brand-green-deep); letter-spacing: 0.4px; text-transform: uppercase; margin-bottom: 12px;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.75), 0 2px 6px rgba(224,176,64,0.18);
+      width: fit-content;
+    }
+    .stay-best-for svg { width: 13px; height: 13px; flex-shrink: 0; color: var(--brand-yellow-deep); }
+
+    /* ─── STAY HOST NOTE ─── */
+    .stay-host-note { font-family: 'Fraunces', Georgia, serif; font-size: 14.5px; font-style: italic; color: var(--brand-clay); line-height: 1.55; margin-bottom: 14px; font-variation-settings: "opsz" 80, "SOFT" 60; }
+    .stay-host-note::before { content: '"'; }
+    .stay-host-note::after { content: '"'; }
+
+    /* ─── PRICE INQUIRE ─── */
+    .stay-price-inquire { font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 500; color: var(--ink); opacity: 0.82; font-style: italic; }
+
+    /* ─── FOOTER QUOTE ─── */
+    .footer-quote-wrap { text-align: center; padding: 52px 0 44px; border-bottom: 1px solid rgba(255,255,255,0.12); margin-bottom: 44px; }
+    .footer-quote { font-family: 'Fraunces', Georgia, serif; font-size: clamp(22px, 3vw, 34px); font-weight: 500; color: var(--paper); line-height: 1.3; font-style: italic; margin-bottom: 10px; font-variation-settings: "opsz" 144, "SOFT" 80; }
+    .footer-quote-attr { font-family: 'Inter', sans-serif; font-size: 14px; color: rgba(255,255,255,0.55); letter-spacing: 0.6px; }
+    .footer-contact-info p { color: rgba(255,255,255,.72); font-size: 14px; font-family: 'Inter'; margin-bottom: 6px; line-height: 1.6; }
+    .footer-contact-info a { color: rgba(255,255,255,.85); transition: color .25s ease; }
+    .footer-contact-info a:hover { color: var(--brand-yellow); }
+    .footer-book-note { color: rgba(255,255,255,.7); font-size: 14px; font-family: 'Inter'; line-height: 1.65; margin-bottom: 16px; }
+
+    /* Why icon tiles are uniform — sun-tint background on all cards */
+
+    /* ─── MOBILE LINK STAGGER ─── */
+    @keyframes mobile-link-in {
+      from { opacity: 0; transform: translateY(16px); }
+      to   { opacity: 1; transform: none; }
+    }
+    .mobile-menu.open .mobile-link { animation: mobile-link-in 0.38s ease both; }
+    .mobile-menu.open .mobile-link:nth-child(2) { animation-delay: 0s; }
+    .mobile-menu.open .mobile-link:nth-child(3) { animation-delay: 0.1s; }
+    .mobile-menu.open .mobile-link:nth-child(4) { animation-delay: 0.2s; }
+    .mobile-menu.open .mobile-link:nth-child(5) { animation-delay: 0.3s; }
+    .mobile-menu.open .mobile-link:nth-child(6) { animation-delay: 0.4s; }
+
+    @media (prefers-reduced-motion: reduce) {
+      .reveal { opacity: 1; transform: none; transition: none; }
+      .stay-card:hover { transform: none; }
+      .stay-card.in-view .stay-badge { animation: none; }
+      .btn-primary::after { display: none; }
+      .hero-underline path { stroke-dashoffset: 0; animation: none; }
+      .scroll-cue-line::after { animation: none; }
+      .mobile-menu.open .mobile-link { animation: none; opacity: 1; }
+      html { scroll-behavior: auto; }
+    }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 1024px) {
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      .nav { background: rgba(255,255,255,.92); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); }
+      .nav.menu-open { background: transparent; backdrop-filter: none; -webkit-backdrop-filter: none; box-shadow: none; }
+      .nav.menu-open .nav-brand { visibility: hidden; }
+      .hero-grid { grid-template-columns: 1fr; gap: 40px; }
+      .hero-art-wrap { max-width: 460px; margin: 0 auto; }
+      .stays-grid { grid-template-columns: repeat(2, 1fr); }
+      .stay-card--feature { grid-column: span 2; grid-template-columns: 1fr 1fr; }
+      .why-grid { grid-template-columns: repeat(2, 1fr); }
+      .why-card:nth-child(2), .why-card:nth-child(4) { transform: none; }
+    }
+    @media (max-width: 680px) {
+      section { padding: 64px 0; }
+      .hero h1 { font-size: clamp(24px, 7vw, 40px); line-height: 1.08; }
+      .hero-sub { max-width: 100%; }
+      .hero-trust .sep { margin: 0 5px; }
+      .announcement-bar { font-size: 13px; padding: 10px 42px 10px 14px; line-height: 1.35; }
+      .announcement-bar .bar-long { display: none; }
+      .announcement-bar .bar-short { display: inline; }
+      .stays-grid { grid-template-columns: 1fr; }
+      .stay-card--feature { grid-column: span 1; grid-template-columns: 1fr; }
+      .stay-card--feature .stay-media { min-height: 240px; }
+      .stay-foot { flex-direction: column; align-items: stretch; gap: 12px; }
+      .stay-foot .btn { width: 100%; }
+      .why-grid { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; gap: 0; }
+      .footer-grid { grid-template-columns: 1fr; text-align: center; }
+      .footer-brand { justify-content: center; }
+      .inquiry-form { padding: 24px; }
+      .hero-ctas .btn { width: 100%; max-width: 320px; }
+      .hero { padding-bottom: 56px; }
+      .nav-logo { height: 100px; margin: -25px 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="nature-panel nature-panel--left" aria-hidden="true"></div>
+  <div class="nature-panel nature-panel--right" aria-hidden="true"></div>
+
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <div class="announcement-bar" id="announcementBar">
+    <span class="bar-long">Now booking spring and summer stays. <a href="#inquiry">Request your dates</a>.</span><span class="bar-short">Now booking. <a href="#inquiry">Request dates</a></span>
+    <button class="announcement-bar-close" aria-label="Dismiss announcement" id="barClose">&times;</button>
+  </div>
+
+  <nav class="nav" id="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="#" class="nav-brand" aria-label="New Beginnings DSC home">
+        <img src="/images/Logo/NB_FULLCOLOR_BACKGROUNDGREE3.png" alt="New Beginnings DSC" class="nav-logo">
+      </a>
+      <ul class="nav-links">
+        <li><a href="#stays">Our Stays</a></li>
+        <li><a href="#why">Why Us</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#inquiry" class="nav-cta">Request to Book</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <div class="mobile-menu" id="mobileMenu" role="dialog" aria-label="Navigation menu" aria-modal="true">
+    <div class="mobile-menu-brand">
+      <img src="/images/Logo/NB_FULLCOLOR_BACKGROUNDGREE3.png" alt="New Beginnings DSC" class="nav-logo">
+    </div>
+    <a href="#stays" class="mobile-link">Our Stays</a>
+    <a href="#why" class="mobile-link">Why Us</a>
+    <a href="#about" class="mobile-link">About</a>
+    <a href="#faq" class="mobile-link">FAQ</a>
+    <a href="#inquiry" class="btn btn-primary mobile-link">Request to Book</a>
+  </div>
+
+  <main id="main" role="main">
+
+    <!-- ═════ HERO ═════ -->
+    <section class="hero" id="hero">
+      <div class="container">
+        <div class="hero-grid">
+          <div class="hero-text">
+            <p class="eyebrow reveal">Now Booking &middot; Missouri</p>
+            <h1 class="reveal">Where every open door is a <span class="word-home">new start<svg class="hero-underline" viewBox="0 0 220 14" preserveAspectRatio="none" aria-hidden="true"><path d="M2 9 C 40 2, 90 13, 140 6 S 210 10, 218 5" fill="none" stroke="#f4c95a" stroke-width="4" stroke-linecap="round"/></svg></span></h1>
+            <p class="hero-sub reveal">Short-term stays across Missouri. Clean places, easy check-in, and a host who picks up the phone.</p>
+            <div class="hero-stats reveal">
+              <span class="hero-stat-pill"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--brand-green)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9.5L12 3l9 6.5V20a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z"/><polyline points="9 21 9 12 15 12 15 21"/></svg>3 Unique Stays</span>
+              <span class="hero-stat-pill"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--brand-green)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>&lt;24h Reply</span>
+              <span class="hero-stat-pill"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--brand-green)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Local Host</span>
+            </div>
+            <div class="hero-ctas reveal">
+              <a href="#stays" class="btn btn-primary">Browse Our Stays</a>
+              <a href="#inquiry" class="btn btn-ghost">Request to Book</a>
+            </div>
+            <p class="hero-trust reveal">Clean before you arrive <span class="sep">&middot;</span> Self check-in <span class="sep">&middot;</span> A host who picks up</p>
+            <div class="scroll-cue reveal" aria-hidden="true">
+              <div class="scroll-cue-line"></div>
+              scroll
+            </div>
+          </div>
+          <div class="hero-art-wrap reveal">
+            <span class="hero-blob-clay" aria-hidden="true"></span>
+            <span class="hero-blob-sun" aria-hidden="true"></span>
+            <div class="hero-art">
+              <div class="hero-slogan-overlay" aria-hidden="true">Every stay is personal.</div>
+              <div class="hero-collage">
+                <div class="hero-collage-main">
+                  <img src="/images/properties/henrietta/5V4A9042.jpg" alt="Henrietta home exterior" loading="eager">
+                </div>
+                <div class="hero-collage-side">
+                  <div class="hero-collage-item">
+                    <img src="/images/properties/townhouse/F66A9477.jpg" alt="Townhouse property exterior" loading="lazy">
+                  </div>
+                  <div class="hero-collage-item">
+                    <img src="/images/properties/beachbound/Lu8kXX0w.jpg" alt="Boardwalk to the beach" loading="lazy">
+                  </div>
+                </div>
+              </div>
+              <div class="hosted-pill" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="#2d6a2d"><path d="M12 2l2.6 6.4 6.9.5-5.3 4.4 1.7 6.7L12 16.7l-5.9 3.3 1.7-6.7L2.5 8.9l6.9-.5L12 2z"/></svg>
+                Hosted by Nichole
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider" aria-hidden="true"><svg viewBox="0 0 1440 50" preserveAspectRatio="none"><path d="M0 22 C 180 8, 340 40, 520 24 S 880 6, 1080 30 S 1380 18, 1440 22 L 1440 50 L 0 50 Z" fill="#f0f5f0"/></svg></div>
+
+    <!-- ═════ STAYS ═════ -->
+    <section class="stays" id="stays" style="background: var(--brand-green-light);">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow reveal">Our Stays</p>
+          <h2 class="section-headline reveal">Where you're staying.</h2>
+          <p class="section-sub reveal">Tap a stay for photos, dates, and full details.</p>
+        </div>
+        <div class="stays-grid" id="stays-grid" aria-live="polite">
+          <noscript>
+            <p class="stays-empty">Our stays load with JavaScript enabled. Please use the request form below and we'll share what's available.</p>
+          </noscript>
+        </div>
+        <p class="stays-note reveal">Looking for something specific or hosting a group? <a href="#inquiry">Send a request</a> and we'll help you find the right fit.</p>
+      </div>
+    </section>
+
+    <div class="section-divider" aria-hidden="true"><svg viewBox="0 0 1440 50" preserveAspectRatio="none"><path d="M0 28 C 200 14, 400 36, 600 22 S 1000 12, 1200 28 S 1380 22, 1440 26 L 1440 50 L 0 50 Z" fill="#ffffff"/></svg></div>
+
+    <!-- ═════ WHY ═════ -->
+    <section class="why" id="why" style="background: #ffffff;">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow reveal">Why Us</p>
+          <h2 class="section-headline reveal">What comes with every stay.</h2>
+        </div>
+        <div class="why-grid">
+          <!-- Why 1: Cleaned before you arrive -->
+          <div class="why-card reveal">
+            <div class="why-icon-tile">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--brand-green)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                <polyline points="9 12 11 14 15 10"/>
+              </svg>
+            </div>
+            <h3>Cleaned Before You Arrive</h3>
+            <p>Every stay is cleaned top to bottom and stocked with the basics: coffee, soap, fresh towels.</p>
+          </div>
+          <!-- Why 2: Self check-in -->
+          <div class="why-card reveal">
+            <div class="why-icon-tile">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--brand-green)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="8" cy="12" r="4"/>
+                <path d="M12 12h8"/>
+                <path d="M17 9v3m0 3v-3"/>
+                <path d="M21 9v3m0 3v-3"/>
+              </svg>
+            </div>
+            <h3>Check In On Your Time</h3>
+            <p>Self check-in. Arrive when your trip lets you arrive.</p>
+          </div>
+          <!-- Why 3: A host who picks up -->
+          <div class="why-card reveal">
+            <div class="why-icon-tile">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--brand-green)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.49 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.4 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.64a16 16 0 0 0 6 6l.73-.73a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+              </svg>
+            </div>
+            <h3>A Host Who Picks Up</h3>
+            <p>Nichole is local. If you need something during your stay, she's a text away.</p>
+          </div>
+          <!-- Why 4: Places you'll want to stay -->
+          <div class="why-card reveal">
+            <div class="why-icon-tile">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--brand-green)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M3 9.5L12 3l9 6.5V20a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z"/>
+                <polyline points="9 21 9 12 15 12 15 21"/>
+              </svg>
+            </div>
+            <h3>Places You'll Want to Stay</h3>
+            <p>Each home sits close to the lakes, towns, and trails you came to see.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider" aria-hidden="true"><svg viewBox="0 0 1440 50" preserveAspectRatio="none"><path d="M0 24 C 220 10, 420 38, 620 22 S 980 16, 1180 30 S 1380 18, 1440 24 L 1440 50 L 0 50 Z" fill="#f0f5f0"/></svg></div>
+
+    <!-- ═════ ABOUT ═════ -->
+    <section class="about" id="about" style="background: var(--brand-green-light);">
+      <div class="container">
+        <div class="about-grid">
+          <div class="about-portrait reveal">
+            <img src="/images/headshot.PNG" alt="Nichole, host of New Beginnings DSC">
+          </div>
+          <p class="eyebrow reveal">Meet Your Host</p>
+          <h2 class="section-headline reveal">Hi, I'm Nichole.</h2>
+          <div class="about-text">
+            <p class="reveal">I started New Beginnings DSC because I love hosting. Family in town for the weekend, a friend taking a few days off, someone starting over. There's a stay for that.</p>
+            <p class="reveal">I take care of each home like it's mine. Clean, stocked with the basics, ready when you walk in.</p>
+            <p class="reveal">Got a question or a special request? Just text. I'm usually quick about it.</p>
+            <div class="about-stats reveal">
+              <div class="about-stat"><div class="num">3</div><div class="lbl">Unique Stays</div></div>
+              <div class="about-stat"><div class="num">&lt;24h</div><div class="lbl">Reply Time</div></div>
+              <div class="about-stat"><div class="num">Local</div><div class="lbl">Hands-On Host</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider" aria-hidden="true"><svg viewBox="0 0 1440 50" preserveAspectRatio="none"><path d="M0 26 C 180 12, 380 36, 580 22 S 1000 14, 1200 28 S 1380 20, 1440 24 L 1440 50 L 0 50 Z" fill="#ffffff"/></svg></div>
+
+    <!-- ═════ FAQ ═════ -->
+    <section class="faq" id="faq" style="background: #ffffff;">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow reveal">Good to Know</p>
+          <h2 class="section-headline reveal">Frequently asked questions.</h2>
+        </div>
+        <div class="faq-list reveal">
+          <details class="faq-item">
+            <summary>How do I book a stay?</summary>
+            <div class="faq-answer">Pick a stay, send your dates through the form. I'll confirm availability and book you in. Usually same day.</div>
+          </details>
+          <details class="faq-item">
+            <summary>What are check-in and check-out like?</summary>
+            <div class="faq-answer">Most of my places offer self check-in. You'll get arrival instructions a day or two before your trip.</div>
+          </details>
+          <details class="faq-item">
+            <summary>Are pets allowed?</summary>
+            <div class="faq-answer">Some of my homes welcome pets. Look for the "Pet friendly" tag and tell me about your dog (or cat, or other) in the request.</div>
+          </details>
+          <details class="faq-item">
+            <summary>What is your cancellation policy?</summary>
+            <div class="faq-answer">Cancellation terms go out with your booking confirmation. If plans change, just reach out and I'll do what I can.</div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider" aria-hidden="true"><svg viewBox="0 0 1440 50" preserveAspectRatio="none"><path d="M0 22 C 220 8, 420 38, 600 20 S 960 14, 1180 30 S 1380 18, 1440 22 L 1440 50 L 0 50 Z" fill="#ffffff"/></svg></div>
+
+    <!-- ═════ INQUIRY ═════ -->
+    <section class="inquiry" id="inquiry" style="background: #ffffff;">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow reveal">Book a Stay</p>
+          <h2 class="section-headline reveal">Ready when you are.</h2>
+          <p class="section-sub reveal">Send a request and Nichole will confirm your dates personally.</p>
+        </div>
+
+        <div class="booking-paths reveal">
+          <div class="booking-path booking-path--request">
+            <h3>Request to Book</h3>
+            <p>Fill out the form below. Nichole reviews and approves, then your dates are locked in.</p>
+          </div>
+        </div>
+
+        <div class="inquiry-form reveal">
+          <form id="inquiryForm">
+            <div class="hp-field" aria-hidden="true">
+              <label for="website">Website</label>
+              <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="fullName">Full name *</label>
+                <input type="text" id="fullName" name="fullName" required placeholder="Your name">
+              </div>
+              <div class="form-group">
+                <label for="email">Email *</label>
+                <input type="email" id="email" name="email" required placeholder="you@email.com">
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="phone">Phone</label>
+                <input type="tel" id="phone" name="phone" placeholder="(555) 555-5555">
+              </div>
+              <div class="form-group">
+                <label for="property">Which stay?</label>
+                <select id="property" name="property">
+                  <option value="Not sure yet" selected>Not sure yet / general</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="checkin">Check-in</label>
+                <input type="date" id="checkin" name="checkin">
+              </div>
+              <div class="form-group">
+                <label for="checkout">Check-out</label>
+                <input type="date" id="checkout" name="checkout">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="guests">Number of guests</label>
+              <input type="number" id="guests" name="guests" min="1" max="20" placeholder="2">
+            </div>
+
+            <div class="form-group">
+              <label for="message">Anything else we should know?</label>
+              <textarea id="message" name="message" placeholder="Tell us about your trip, questions, or special requests."></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block">Send My Request</button>
+            <p class="form-note">We reply within 24 hours. You can also email <a href="mailto:hello@newbeginningsdsc.com">hello@newbeginningsdsc.com</a>.</p>
+          </form>
+
+          <div class="form-success" id="formSuccess">
+            <div class="check">&#10003;</div>
+            <h3 id="successName">Thanks! Your request is in.</h3>
+            <p>We'll be in touch within 24 hours to help plan your stay.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <div class="section-divider" aria-hidden="true"><svg viewBox="0 0 1440 50" preserveAspectRatio="none"><path d="M0 24 C 220 10, 420 36, 620 22 S 980 14, 1180 28 S 1380 20, 1440 24 L 1440 50 L 0 50 Z" class="next-teal-deep"/></svg></div>
+
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-quote-wrap">
+        <p class="footer-quote">"Every stay is personal."</p>
+        <p class="footer-quote-attr">- Nichole, Host &amp; Owner</p>
+      </div>
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">
+            <img src="/images/Logo/NB_FULLCOLOR_BACKGROUNDGREE3.png" alt="New Beginnings DSC" class="nav-logo">
+          </div>
+          <p class="footer-tagline">Short-term stays across Missouri. Comfortable places and a host who answers.</p>
+          <div class="footer-contact-info">
+            <p>Text or call: <a href="tel:+15735550100">(573) 555-0100</a></p>
+            <p>Email: <a href="mailto:hello@newbeginningsdsc.com">hello@newbeginningsdsc.com</a></p>
+          </div>
+        </div>
+        <div>
+          <h4>Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="#stays">Our Stays</a></li>
+            <li><a href="#why">Why Us</a></li>
+            <li><a href="#about">About Nichole</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="/privacy.html">Privacy Policy</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Book a Stay</h4>
+          <p class="footer-book-note">Ready when you are. Send your dates and I'll get back to you, usually same day.</p>
+          <a href="#inquiry" class="btn btn-primary">Request to Book</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        &copy; <span id="footerYear"></span> New Beginnings DSC. All rights reserved. &nbsp;|&nbsp; <a href="/privacy.html">Privacy Policy</a> &nbsp;|&nbsp; Website by <a href="https://jbwebco.com" target="_blank" rel="noopener">JB Web Co.</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      'use strict';
+
+      document.getElementById('footerYear').textContent = new Date().getFullYear();
+
+      /* ── Announcement bar + nav offset sync ── */
+      var bar = document.getElementById('announcementBar');
+      var navEl = document.getElementById('nav');
+      function syncNavOffset() {
+        var barH = (bar && !bar.classList.contains('dismissed')) ? bar.offsetHeight : 0;
+        if (navEl) navEl.style.top = barH + 'px';
+        var navH = navEl ? navEl.offsetHeight : 0;
+        document.documentElement.style.setProperty('--header-offset', (barH + navH) + 'px');
+      }
+      if (sessionStorage.getItem('nbDscBarDismissed') === '1' && bar) bar.classList.add('dismissed');
+      var barClose = document.getElementById('barClose');
+      if (barClose) barClose.addEventListener('click', function () {
+        bar.classList.add('dismissed');
+        sessionStorage.setItem('nbDscBarDismissed', '1');
+        syncNavOffset();
+      });
+      syncNavOffset();
+      window.addEventListener('resize', syncNavOffset, { passive: true });
+      window.addEventListener('load', syncNavOffset);
+      if (document.fonts && document.fonts.ready) document.fonts.ready.then(syncNavOffset);
+      if ('ResizeObserver' in window && bar) new ResizeObserver(syncNavOffset).observe(bar);
+      setTimeout(syncNavOffset, 200);
+
+      /* ── Sticky nav ── */
+      window.addEventListener('scroll', function () {
+        navEl.classList.toggle('scrolled', window.scrollY > 50);
+      }, { passive: true });
+
+      /* ── Hamburger ── */
+      var hamburger = document.getElementById('hamburger');
+      var mobileMenu = document.getElementById('mobileMenu');
+      hamburger.addEventListener('click', function () {
+        var open = mobileMenu.classList.toggle('open');
+        hamburger.classList.toggle('active');
+        navEl.classList.toggle('menu-open', open);
+        hamburger.setAttribute('aria-expanded', open);
+        document.body.style.overflow = open ? 'hidden' : '';
+      });
+      mobileMenu.querySelectorAll('a').forEach(function (link) {
+        link.addEventListener('click', function () {
+          mobileMenu.classList.remove('open'); hamburger.classList.remove('active');
+          navEl.classList.remove('menu-open');
+          hamburger.setAttribute('aria-expanded', 'false'); document.body.style.overflow = '';
+        });
+      });
+      mobileMenu.addEventListener('keydown', function (e) {
+        if (e.key !== 'Tab') return;
+        var f = mobileMenu.querySelectorAll('a, button');
+        var first = f[0], last = f[f.length - 1];
+        if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+        else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+      });
+
+      /* ── Reveal with stagger ── */
+      var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      function revealAll() { document.querySelectorAll('.reveal').forEach(function (el) { el.classList.add('visible'); }); }
+      if (!reduce && 'IntersectionObserver' in window) {
+        var obs = new IntersectionObserver(function (entries) {
+          entries.forEach(function (en) {
+            if (!en.isIntersecting) return;
+            var el = en.target;
+            // Stagger children inside a grouped container
+            var siblings = el.parentNode && el.parentNode.classList && (el.parentNode.classList.contains('why-grid') || el.parentNode.classList.contains('stays-grid'));
+            if (siblings) {
+              var idx = Array.prototype.indexOf.call(el.parentNode.children, el);
+              el.style.transitionDelay = (idx * 60) + 'ms';
+            }
+            el.classList.add('visible');
+            // Featured badge pulse: triggered when stay-card enters viewport
+            if (el.classList && el.classList.contains('stay-card')) el.classList.add('in-view');
+            obs.unobserve(el);
+          });
+        }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+        document.querySelectorAll('.reveal, .stay-card').forEach(function (el) { obs.observe(el); });
+      } else {
+        revealAll();
+        document.querySelectorAll('.stay-card').forEach(function (el) { el.classList.add('in-view'); });
+      }
+
+      /* ── Helpers ── */
+      function resolveSrc(src) { return src && src.charAt(0) === '/' ? src : '/' + src; }
+      function priceText(p) { if (!p || typeof p.amount !== 'number') return ''; return '$' + p.amount; }
+      function capacityText(c) {
+        if (!c) return '';
+        var parts = [];
+        if (c.guests) parts.push(c.guests + ' guest' + (c.guests > 1 ? 's' : ''));
+        if (c.bedrooms) parts.push(c.bedrooms + ' bd');
+        if (c.baths) parts.push(c.baths + ' ba');
+        return parts.join('  ·  ');
+      }
+      var PIN_SVG = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>';
+      var HEART_SVG = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 1 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>';
+      var FAMILY_SVG = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>';
+      var SPARKLE_SVG = '<svg viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 2l1.8 5.2L19 9l-5.2 1.8L12 16l-1.8-5.2L5 9l5.2-1.8z"/></svg>';
+      function bestForIcon(label) {
+        var l = (label || '').toLowerCase();
+        if (l.indexOf('couple') > -1 || l.indexOf('romance') > -1 || l.indexOf('honeymoon') > -1) return HEART_SVG;
+        if (l.indexOf('family') > -1 || l.indexOf('reunion') > -1 || l.indexOf('group') > -1) return FAMILY_SVG;
+        return SPARKLE_SVG;
+      }
+
+      /* ── Build a stay card. Featured + first index renders the wide horizontal layout. ── */
+      function buildCard(p, index) {
+        var card = document.createElement('article');
+        card.className = 'stay-card reveal';
+        if (p.featured && index === 0) card.classList.add('stay-card--feature');
+
+        var hero = (p.images || []).filter(function (im) { return im.featured; })[0] || (p.images || [])[0];
+        var media = document.createElement('a');
+        media.className = 'stay-media';
+        media.href = p.url || ('stay/?id=' + encodeURIComponent(p.id));
+        media.setAttribute('aria-label', 'View ' + p.name);
+        if (hero) {
+          var img = document.createElement('img');
+          img.src = resolveSrc(hero.src);
+          img.alt = hero.alt || p.name;
+          img.loading = 'lazy'; img.decoding = 'async';
+          img.width = 1200; img.height = 800;
+          media.appendChild(img);
+        }
+        if (p.featured) {
+          var badge = document.createElement('span');
+          badge.className = 'stay-badge';
+          badge.textContent = 'Featured';
+          media.appendChild(badge);
+        }
+        card.appendChild(media);
+
+        var body = document.createElement('div');
+        body.className = 'stay-body';
+
+        if (p.location && p.location.label) {
+          var loc = document.createElement('div');
+          loc.className = 'stay-loc';
+          loc.innerHTML = PIN_SVG;
+          loc.appendChild(document.createTextNode(p.location.label));
+          body.appendChild(loc);
+        }
+
+        var h3 = document.createElement('h3');
+        var nameLink = document.createElement('a');
+        nameLink.href = p.url || ('stay/?id=' + encodeURIComponent(p.id));
+        nameLink.textContent = p.name;
+        h3.appendChild(nameLink);
+        body.appendChild(h3);
+
+        if (p.bestFor) {
+          var bestFor = document.createElement('div');
+          bestFor.className = 'stay-best-for';
+          bestFor.innerHTML = bestForIcon(p.bestFor);
+          bestFor.appendChild(document.createTextNode(p.bestFor));
+          body.appendChild(bestFor);
+        }
+
+        if (p.tagline) {
+          var tag = document.createElement('p');
+          tag.className = 'stay-tagline';
+          tag.textContent = p.tagline;
+          body.appendChild(tag);
+        }
+
+        var meta = document.createElement('div');
+        meta.className = 'stay-meta';
+        meta.textContent = capacityText(p.capacity);
+        body.appendChild(meta);
+
+        if (p.hostNote) {
+          var hostNote = document.createElement('p');
+          hostNote.className = 'stay-host-note';
+          hostNote.textContent = p.hostNote;
+          body.appendChild(hostNote);
+        }
+
+        var foot = document.createElement('div');
+        foot.className = 'stay-foot';
+        var price = document.createElement('div');
+        price.className = 'stay-price';
+        if (!p.price || p.price.amount === null || typeof p.price.amount !== 'number') {
+          var inquire = document.createElement('span');
+          inquire.className = 'stay-price-inquire';
+          inquire.textContent = 'Inquire for pricing';
+          price.appendChild(inquire);
+        } else {
+          price.appendChild(document.createTextNode(priceText(p.price)));
+          var unit = document.createElement('span');
+          unit.textContent = ' / ' + p.price.unit;
+          price.appendChild(unit);
+        }
+        foot.appendChild(price);
+
+        var btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = 'btn btn-ghost';
+        btn.textContent = 'See availability →';
+        btn.addEventListener('click', function () { preselect(p.name); });
+        foot.appendChild(btn);
+
+        body.appendChild(foot);
+        card.appendChild(body);
+        return card;
+      }
+
+      /* ── Render grid + populate select ── */
+      var grid = document.getElementById('stays-grid');
+      var propertySelect = document.getElementById('property');
+
+      function renderEmpty(msg) {
+        var div = document.createElement('div');
+        div.className = 'stays-empty';
+        div.textContent = msg;
+        grid.appendChild(div);
+      }
+
+      function preselect(name) {
+        if (propertySelect) {
+          for (var i = 0; i < propertySelect.options.length; i++) {
+            if (propertySelect.options[i].value === name) { propertySelect.selectedIndex = i; break; }
+          }
+        }
+        var inquiry = document.getElementById('inquiry');
+        if (inquiry) inquiry.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
+      }
+
+      fetch('/data/properties.json', { cache: 'no-cache' })
+        .then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
+        .then(function (data) {
+          var list = (data && data.properties) ? data.properties.slice() : [];
+          var available = list.filter(function (p) { return p.status === 'available'; });
+          available.sort(function (a, b) { return (b.featured ? 1 : 0) - (a.featured ? 1 : 0); });
+
+          if (!available.length) { renderEmpty('Our listings are being updated. Please send a request below and we\'ll share what\'s available.'); }
+          available.forEach(function (p, i) {
+            var card = buildCard(p, i);
+            grid.appendChild(card);
+            // Re-observe new cards so they reveal and pulse
+            if (!reduce && 'IntersectionObserver' in window) {
+              var newObs = new IntersectionObserver(function (entries, o) {
+                entries.forEach(function (en) {
+                  if (!en.isIntersecting) return;
+                  var siblingsIdx = Array.prototype.indexOf.call(en.target.parentNode.children, en.target);
+                  en.target.style.transitionDelay = (siblingsIdx * 60) + 'ms';
+                  en.target.classList.add('visible', 'in-view');
+                  o.unobserve(en.target);
+                });
+              }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+              newObs.observe(card);
+            } else { card.classList.add('visible', 'in-view'); }
+          });
+
+          if (propertySelect) {
+            available.forEach(function (p) {
+              var opt = document.createElement('option');
+              opt.value = p.name; opt.textContent = p.name;
+              propertySelect.appendChild(opt);
+            });
+          }
+
+          // Cross-page preselect via ?property=<id or name> and optional ?checkin / ?checkout
+          var params = new URLSearchParams(location.search);
+          var wantedProperty = params.get('property');
+          var wantedCheckin = params.get('checkin');
+          var wantedCheckout = params.get('checkout');
+          if (wantedProperty) {
+            var match = available.filter(function (p) { return p.id === wantedProperty || p.name === wantedProperty; })[0];
+            if (match) {
+              for (var i = 0; i < propertySelect.options.length; i++) {
+                if (propertySelect.options[i].value === match.name) { propertySelect.selectedIndex = i; break; }
+              }
+            }
+          }
+          if (wantedCheckin) { var ci = document.getElementById('checkin'); if (ci) ci.value = wantedCheckin; }
+          if (wantedCheckout) { var co = document.getElementById('checkout'); if (co) co.value = wantedCheckout; }
+          if (wantedProperty || wantedCheckin) {
+            setTimeout(function () { document.getElementById('inquiry').scrollIntoView({ behavior: 'auto', block: 'start' }); }, 150);
+          }
+        })
+        .catch(function (err) {
+          grid.innerHTML = '';
+          renderEmpty('Our listings are being updated. Please send a request below and we\'ll share what\'s available.');
+          if (window.console) console.warn('Could not load properties.json:', err);
+        });
+
+      /* ── Inquiry form ── */
+      var form = document.getElementById('inquiryForm');
+      var formSuccess = document.getElementById('formSuccess');
+      var successName = document.getElementById('successName');
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var hp = document.getElementById('website');
+        if (hp && hp.value !== '') return;
+
+        var name = document.getElementById('fullName').value.trim();
+        var first = name.split(' ')[0] || 'there';
+        var submit = form.querySelector('button[type="submit"]');
+        submit.disabled = true;
+        submit.textContent = 'Sending...';
+
+        fetch('https://formspree.io/f/__SWAP_FORMSPREE_ID__', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          body: JSON.stringify({
+            _subject: 'New booking inquiry from New Beginnings DSC',
+            name: name,
+            email: document.getElementById('email').value,
+            phone: document.getElementById('phone').value,
+            property: document.getElementById('property').value,
+            checkin: document.getElementById('checkin').value,
+            checkout: document.getElementById('checkout').value,
+            guests: document.getElementById('guests').value,
+            message: document.getElementById('message').value
+          })
+        }).then(function (res) {
+          if (res.ok) {
+            successName.textContent = 'Thanks, ' + first + '.';
+            form.style.display = 'none';
+            formSuccess.classList.add('show');
+            formSuccess.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'center' });
+          } else { throw new Error('bad status'); }
+        }).catch(function () {
+          submit.disabled = false;
+          submit.textContent = 'Send My Request';
+          alert('Something went wrong. Please email hello@newbeginningsdsc.com and we\'ll get right back to you.');
+        });
+      });
+
+    })();
+  </script>
+
+</body>
+</html>

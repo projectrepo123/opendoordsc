@@ -1,0 +1,786 @@
+﻿<!--
+  New Beginnings DSC. Property detail page — The Townhouse.
+  Static page; property data is embedded directly (no fetch required).
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>The Townhouse | New Beginnings DSC</title>
+  <meta name="description" id="metaDescription" content="Elegant multi-level townhouse in Missouri with a private media room and designer finishes.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" id="metaCanonical" href="https://newbeginningsdsc.com/stay/townhouse/">
+
+  <meta property="og:title" id="ogTitle" content="The Townhouse | New Beginnings DSC">
+  <meta property="og:description" id="ogDescription" content="Elegant multi-level townhouse in Missouri with a private media room and designer finishes.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" id="ogUrl" content="https://newbeginningsdsc.com/stay/townhouse/">
+  <meta property="og:image" id="ogImage" content="https://newbeginningsdsc.com/og-share.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:site_name" content="New Beginnings DSC">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" id="twTitle" content="The Townhouse | New Beginnings DSC">
+  <meta name="twitter:description" id="twDescription" content="Elegant multi-level townhouse in Missouri with a private media room and designer finishes.">
+  <meta name="twitter:image" id="twImage" content="https://newbeginningsdsc.com/og-share.png">
+
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://formspree.io; frame-src 'none'; base-uri 'self'; form-action https://formspree.io">
+
+  <meta name="theme-color" content="#2d6a2d">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,400..700,50..100&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,400..700,50..100&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"></noscript>
+
+  <style>
+    :root {
+      --brand-green: #2d6a2d;
+      --brand-green-deep: #1e4d1e;
+      --brand-green-light: #f0f5f0;
+      --brand-yellow: #f4c95a;
+      --brand-yellow-deep: #e0b040;
+      --brand-clay: #d96b4a;
+      --paper: #fafafa;
+      --ink: #1c2422;
+      --ink-muted: #5a6661;
+      --paper-deep: #f3ecda;
+      --line: rgba(45,106,45,0.16);
+      --radius: 16px; --radius-lg: 24px; --radius-pill: 50px;
+      --shadow-soft: 0 12px 30px rgba(30,77,30,0.10);
+    }
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; overflow-x: hidden; }
+    body {
+      font-family: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      font-size: 17px; line-height: 1.7; color: var(--ink); background: var(--paper);
+      overflow-x: hidden; -webkit-font-smoothing: antialiased; position: relative;
+    }
+    body::before {
+      content: ''; position: fixed; inset: 0; z-index: 0; pointer-events: none;
+      opacity: 0.04; mix-blend-mode: multiply;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      background-size: 256px 256px;
+    }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+    h1, h2, h3, h4 { font-family: 'Fraunces', Georgia, serif; font-weight: 500; line-height: 1.15; letter-spacing: -0.015em; color: var(--ink); }
+    .container { max-width: 1180px; margin: 0 auto; padding: 0 24px; position: relative; z-index: 1; }
+
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 12px 26px; border-radius: var(--radius-pill); font-family: 'Inter', sans-serif; font-size: 15px; font-weight: 600; letter-spacing: 0.02em; cursor: pointer; border: 1.5px solid transparent; min-height: 46px; position: relative; overflow: hidden; transition: transform 150ms ease, box-shadow 150ms ease, background 150ms ease, border-color 150ms ease, color 150ms ease; }
+    .btn-primary {
+      background: linear-gradient(160deg, #3a7f3a 0%, var(--brand-green) 50%, #265426 100%);
+      color: #fff; border-color: rgba(255,255,255,0.16);
+      box-shadow: inset 0 1.5px 0 rgba(255,255,255,0.3), inset 0 -1px 0 rgba(0,0,0,0.1), 0 1px 3px rgba(45,106,45,0.32), 0 4px 14px rgba(45,106,45,0.22), 0 10px 28px rgba(45,106,45,0.1);
+    }
+    .btn-primary:hover {
+      background: linear-gradient(160deg, #4a8c4a 0%, #3a7f3a 50%, #2d6a2d 100%);
+      transform: translateY(-1.5px);
+      box-shadow: inset 0 1.5px 0 rgba(255,255,255,0.3), inset 0 -1px 0 rgba(0,0,0,0.1), 0 2px 6px rgba(45,106,45,0.36), 0 8px 22px rgba(45,106,45,0.28), 0 20px 42px rgba(45,106,45,0.14);
+      border-color: rgba(255,255,255,0.2);
+    }
+    .btn-primary:active { transform: scale(0.98) translateY(0); box-shadow: inset 0 1px 0 rgba(255,255,255,0.18), inset 0 -1px 0 rgba(0,0,0,0.1), 0 1px 3px rgba(45,106,45,0.25); }
+    .btn-primary::after { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.5), transparent); transform: translateX(-100%); transition: transform .38s ease; }
+    .btn-primary:hover::after { transform: translateX(100%); }
+    .btn-ghost {
+      background: transparent; border: 2px solid var(--brand-green); color: var(--brand-green);
+    }
+    .btn-ghost:hover {
+      background: rgba(45,106,45,0.06); color: var(--brand-green); transform: translateY(-1.5px);
+      border-color: var(--brand-green);
+    }
+    .btn-ghost:active { transform: scale(0.98); }
+    .btn-block { width: 100%; }
+    a:focus-visible, .btn:focus-visible, button:focus-visible { outline: 3px solid var(--brand-clay); outline-offset: 2px; }
+    .skip-link { position: absolute; left: -9999px; }
+    .skip-link:focus { position: fixed; top: 8px; left: 8px; z-index: 10000; background: var(--brand-clay); color: #fff; padding: 12px 22px; border-radius: var(--radius); font-weight: 600; }
+
+    /* Nav */
+    .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: 12px 0; background: rgba(255,255,255,.96); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); box-shadow: 0 4px 24px rgba(30,77,30,.08); }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; max-width: 1180px; margin: 0 auto; padding: 0 24px; }
+    .nav-brand { display: flex; align-items: center; gap: 10px; }
+    .nav-logo { height: 80px; width: auto; flex-shrink: 0; display: block; }
+    .mobile-menu .nav-logo { height: 120px; }
+    .footer-brand .nav-logo { height: 80px; }
+    @media (max-width: 680px) { .nav-logo { height: 60px; } }
+    .nav-links { display: flex; align-items: center; gap: 28px; list-style: none; }
+    .nav-links a { font-size: 15px; font-weight: 500; color: var(--ink-muted); transition: color .25s ease; }
+    .nav-links a:hover { color: var(--brand-green); }
+    .nav-cta {
+      color: #fff !important;
+      background: linear-gradient(160deg, #3a7f3a 0%, var(--brand-green) 50%, #265426 100%);
+      padding: 9px 20px; border-radius: var(--radius-pill);
+      border: 1px solid rgba(255,255,255,0.2) !important;
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,0.3),
+        0 4px 14px rgba(45,106,45,0.35),
+        0 1px 4px rgba(0,0,0,0.1);
+      font-size: 15px; font-weight: 600; letter-spacing: 0.02em;
+      transition: transform 120ms ease, box-shadow 120ms ease;
+    }
+    .nav-cta:hover {
+      transform: translateY(-1px);
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,0.35),
+        0 6px 18px rgba(45,106,45,0.45);
+    }
+    .nav-cta:active { transform: scale(0.97); }
+    .hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 10px; min-width: 44px; min-height: 44px; justify-content: center; align-items: center; z-index: 1010; }
+    .hamburger span { display: block; width: 24px; height: 2px; border-radius: 2px; background: var(--ink); transition: transform .3s ease, opacity .3s ease, background .3s ease; }
+    .hamburger.active span { background: #fff; }
+    .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+    .hamburger.active span:nth-child(2) { opacity: 0; }
+    .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+    .mobile-menu { display: none; position: fixed; inset: 0; z-index: 1005; flex-direction: column; align-items: center; justify-content: center; gap: 6px; background: linear-gradient(160deg, var(--brand-green), var(--brand-green-deep)); }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu-brand { margin-bottom: 28px; }
+    .mobile-menu a { font-family: 'Fraunces', Georgia, serif; font-size: 2.5rem; font-weight: 500; color: rgba(255,255,255,.92); padding: 12px 28px; min-height: 56px; display: flex; align-items: center; font-variation-settings: "opsz" 144, "SOFT" 70; }
+    .mobile-menu a:hover { color: var(--brand-yellow); }
+
+    /* Stay layout */
+    .stay-wrap { padding-top: 92px; min-height: 70vh; position: relative; z-index: 1; }
+    .breadcrumb { padding: 18px 0 6px; font-size: 14px; color: var(--ink-muted); font-family: 'Inter'; }
+    .breadcrumb a { color: var(--brand-green); font-weight: 600; }
+    .stay-head { padding: 8px 0 24px; }
+    .stay-head .loc { display: inline-flex; align-items: center; gap: 6px; font-family: 'Inter'; font-size: 12px; font-weight: 700; color: var(--brand-green); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; }
+    .stay-head .loc svg { width: 13px; height: 13px; }
+    .stay-head h1 { font-size: clamp(32px, 5vw, 52px); font-weight: 500; margin-bottom: 8px; }
+    .stay-head .tagline { font-family: 'Inter'; font-size: clamp(17px, 2.4vw, 20px); color: var(--ink-muted); }
+
+    /* Photo grid */
+    .photo-grid { display: grid; grid-template-columns: 1.55fr 1fr; gap: 8px; border-radius: var(--radius-lg); overflow: hidden; height: 480px; position: relative; }
+    .pgrid-main { padding: 0; border: none; overflow: hidden; background: var(--paper-deep); display: block; width: 100%; height: 100%; cursor: zoom-in; }
+    .pgrid-main img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .35s ease; }
+    .pgrid-main:hover img { transform: scale(1.03); }
+    .pgrid-side { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; gap: 8px; }
+    .pgrid-cell { padding: 0; border: none; overflow: hidden; background: var(--paper-deep); cursor: pointer; display: block; width: 100%; height: 100%; }
+    .pgrid-cell img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .35s ease; }
+    .pgrid-cell:hover img { transform: scale(1.06); }
+    .pgrid-show-all { position: absolute; bottom: 14px; right: 14px; background: #fff; color: var(--ink); border: 1.5px solid rgba(0,0,0,.18); border-radius: 10px; padding: 9px 16px; font-family: 'Inter'; font-size: 14px; font-weight: 600; cursor: pointer; display: none; align-items: center; gap: 7px; box-shadow: 0 2px 8px rgba(0,0,0,.18); transition: box-shadow .15s ease; z-index: 2; }
+    .pgrid-show-all:hover { box-shadow: 0 4px 16px rgba(0,0,0,.22); }
+
+    /* Availability calendar */
+    .availability { background: var(--paper-deep); margin: 0 0 40px; padding: 36px 32px; border-radius: var(--radius-lg); border: 1px solid var(--line); }
+    .availability h2 { font-size: clamp(24px, 3vw, 32px); font-weight: 500; text-align: center; margin-bottom: 6px; }
+    .availability .cal-sub { font-family: 'Inter'; font-size: 14px; color: var(--ink-muted); text-align: center; margin-bottom: 24px; }
+    .cal-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+    .cal-month { background: #fff; border: 1px solid var(--line); border-radius: var(--radius-lg); padding: 22px; box-shadow: var(--shadow-soft); }
+    .cal-head { font-family: 'Fraunces'; font-weight: 500; font-size: 18px; margin-bottom: 14px; text-align: center; }
+    .cal-dow { display: grid; grid-template-columns: repeat(7, 1fr); gap: 4px; margin-bottom: 6px; }
+    .cal-dow span { font-family: 'Inter'; font-size: 11px; font-weight: 700; text-align: center; color: var(--ink-muted); text-transform: uppercase; letter-spacing: 1px; padding-bottom: 6px; }
+    .cal-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 4px; }
+    .cal-cell { display: flex; align-items: center; justify-content: center; aspect-ratio: 1; font-family: 'Inter'; font-size: 13px; border-radius: 8px; font-weight: 500; text-decoration: none; color: var(--ink); }
+    .cal-cell.empty { visibility: hidden; }
+    .cal-cell.past { color: var(--ink-muted); opacity: 0.32; }
+    .cal-cell.unavailable { color: var(--ink-muted); position: relative; background: rgba(90,102,97,0.08); }
+    .cal-cell.unavailable::after { content: ''; position: absolute; left: 6px; right: 6px; top: 50%; border-top: 2px solid var(--ink-muted); transform: translateY(-50%) rotate(-15deg); opacity: 0.4; }
+    .cal-cell.available { background: var(--paper-deep); transition: background .15s ease, color .15s ease, transform .15s ease; }
+    .cal-cell.available:hover { background: var(--brand-green); color: #fff; transform: scale(1.05); }
+    .cal-legend { display: flex; gap: 22px; justify-content: center; margin-top: 22px; font-family: 'Inter'; font-size: 13px; color: var(--ink-muted); flex-wrap: wrap; }
+    .cal-legend > span { display: inline-flex; align-items: center; gap: 6px; }
+    .cal-legend .swatch { width: 14px; height: 14px; border-radius: 4px; display: inline-block; }
+    .cal-legend .swatch.avail { background: var(--paper-deep); border: 1px solid var(--line); }
+    .cal-legend .swatch.booked { background: rgba(90,102,97,0.12); border: 1px solid var(--ink-muted); }
+    .cal-legend .swatch.past { background: var(--ink-muted); opacity: 0.4; }
+    @media (max-width: 820px) {
+      .availability { padding: 24px 16px; }
+      .cal-wrap { grid-template-columns: 1fr; }
+    }
+
+    /* Body two-column */
+    .stay-grid { display: grid; grid-template-columns: 1.6fr 1fr; gap: 40px; padding: 8px 0 80px; align-items: start; }
+    .stay-desc h2 { font-size: 24px; margin: 24px 0 14px; font-weight: 500; }
+    .stay-desc p { font-family: 'Inter'; color: var(--ink-muted); margin-bottom: 14px; }
+    .amenities { display: grid; grid-template-columns: 1fr 1fr; gap: 12px 22px; margin-top: 10px; }
+    .amenity { display: flex; align-items: center; gap: 9px; font-family: 'Inter'; font-size: 15.5px; color: var(--ink); opacity: 0; transform: translateX(-8px); transition: opacity .35s ease, transform .35s ease; }
+    .amenity.in { opacity: 1; transform: translateX(0); }
+    .amenity svg { width: 18px; height: 18px; color: var(--brand-green); flex-shrink: 0; }
+
+    .book-card { position: sticky; top: 96px; background: #fff; border: 1px solid var(--line); border-radius: var(--radius-lg); padding: 26px; box-shadow: var(--shadow-soft); }
+    .book-card-note { font-family: 'Inter'; font-size: 13px; color: var(--brand-green); font-weight: 600; margin-bottom: 8px; }
+    .book-price { font-family: 'Fraunces', Georgia, serif; font-size: 32px; font-weight: 600; color: var(--ink); }
+    .book-price span { font-family: 'Inter', sans-serif; font-weight: 400; font-size: 15px; color: var(--ink-muted); }
+    .book-note { font-family: 'Inter'; font-size: 14px; color: var(--ink-muted); margin: 4px 0 18px; }
+    .facts { list-style: none; margin: 18px 0; border-top: 1px solid var(--line); }
+    .facts li { display: flex; justify-content: space-between; padding: 11px 0; border-bottom: 1px solid var(--line); font-family: 'Inter'; font-size: 15px; }
+    .facts li span:first-child { color: var(--ink-muted); }
+    .facts li span:last-child { font-weight: 700; color: var(--ink); }
+    .book-card .btn { margin-top: 6px; }
+    .book-help { font-family: 'Inter'; text-align: center; font-size: 13px; color: var(--ink-muted); margin-top: 12px; }
+
+    /* Sticky mobile booking bar */
+    .mobile-book-bar { display: none; position: fixed; bottom: 0; left: 0; right: 0; background: var(--paper); border-top: 1px solid var(--line); box-shadow: 0 -10px 28px rgba(30,77,30,.12); padding: 12px 16px; gap: 12px; z-index: 100; align-items: center; justify-content: space-between; transform: translateY(100%); transition: transform .26s ease; }
+    .mobile-book-bar.show { transform: translateY(0); }
+    .mobile-book-bar .mb-price { font-family: 'Fraunces', Georgia, serif; font-size: 22px; font-weight: 600; color: var(--ink); white-space: nowrap; }
+    .mobile-book-bar .mb-price span { font-family: 'Inter'; font-weight: 400; font-size: 12px; color: var(--ink-muted); }
+    .mobile-book-bar .btn { padding: 12px 22px; min-height: 46px; font-size: 14px; flex-shrink: 0; }
+
+    /* Not found */
+    .notfound { text-align: center; padding: 80px 24px 100px; }
+    .notfound h1 { font-size: clamp(28px, 5vw, 40px); margin-bottom: 12px; font-weight: 500; color: var(--brand-green-deep); }
+    .notfound p { font-family: 'Inter'; color: var(--ink-muted); max-width: 460px; margin: 0 auto 26px; }
+
+    /* Gallery modal */
+    .gallery-modal { display: none; position: fixed; inset: 0; z-index: 2000; background: rgba(8,18,16,.96); flex-direction: column; }
+    .gallery-modal.open { display: flex; }
+    .gm-header { display: flex; align-items: center; justify-content: space-between; padding: 16px 24px; flex-shrink: 0; }
+    .gm-count { font-family: 'Inter'; font-size: 15px; font-weight: 600; color: rgba(255,255,255,.85); }
+    .gm-close { background: none; border: none; color: #fff; font-size: 28px; cursor: pointer; min-width: 44px; min-height: 44px; display: flex; align-items: center; justify-content: center; border-radius: 50%; transition: background .15s ease; }
+    .gm-close:hover { background: rgba(255,255,255,.12); }
+    .gm-body { flex: 1; display: flex; align-items: center; justify-content: center; position: relative; padding: 0 72px; min-height: 0; }
+    .gm-body img { max-width: 100%; max-height: calc(100vh - 100px); object-fit: contain; border-radius: var(--radius); transition: opacity .18s ease; }
+    .gm-body img.fading { opacity: 0; }
+    .gm-nav { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(255,255,255,.12); border: none; color: #fff; width: 48px; height: 48px; border-radius: 50%; font-size: 26px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: background .15s ease; backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); }
+    .gm-nav:hover { background: rgba(255,255,255,.22); }
+    .gm-prev { left: 12px; }
+    .gm-next { right: 12px; }
+    .gm-thumbs { display: flex; gap: 8px; padding: 12px 24px 20px; overflow-x: auto; flex-shrink: 0; scrollbar-width: thin; }
+    .gm-thumb { flex-shrink: 0; width: 76px; height: 56px; border-radius: 8px; overflow: hidden; border: 2px solid transparent; padding: 0; cursor: pointer; opacity: .5; transition: opacity .15s ease, border-color .15s ease; background: none; }
+    .gm-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .gm-thumb:hover { opacity: .85; }
+    .gm-thumb.active { opacity: 1; border-color: var(--brand-yellow); }
+
+    /* Footer */
+    .footer { background: var(--brand-green-deep); color: #fff; padding: 48px 0 0; position: relative; z-index: 1; }
+    .footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 44px; padding-bottom: 32px; border-bottom: 1px solid rgba(255,255,255,.1); }
+    .footer-brand { font-family: 'Fraunces', Georgia, serif; font-size: 24px; font-weight: 500; margin-bottom: 10px; display: flex; align-items: center; gap: 10px; }
+    .footer-tagline { color: rgba(255,255,255,.7); font-size: 15px; margin-bottom: 14px; font-family: 'Inter'; font-style: italic; }
+    .footer-info { color: rgba(255,255,255,.55); font-size: 14px; line-height: 1.8; font-family: 'Inter'; }
+    .footer h4 { font-size: 14px; font-weight: 600; margin-bottom: 14px; color: rgba(255,255,255,.85); font-family: 'Inter'; letter-spacing: 1px; text-transform: uppercase; }
+    .footer-links { list-style: none; }
+    .footer-links li { margin-bottom: 9px; }
+    .footer-links a, .footer-contact a { color: rgba(255,255,255,.7); font-size: 15px; font-family: 'Inter'; transition: color .25s ease; }
+    .footer-links a:hover, .footer-contact a:hover { color: var(--brand-yellow); }
+    .footer-contact p { color: rgba(255,255,255,.7); font-size: 15px; margin-bottom: 8px; font-family: 'Inter'; }
+    .footer-bottom { padding: 20px 0; text-align: center; font-size: 13px; color: rgba(255,255,255,.55); font-family: 'Inter'; }
+    .footer-bottom a { color: rgba(255,255,255,.7); }
+    .footer-bottom a:hover { color: #fff; }
+
+    @media (prefers-reduced-motion: reduce) {
+      .amenity { opacity: 1; transform: none; transition: none; }
+      .pgrid-main img, .pgrid-cell img { transition: none; }
+      .gm-body img { transition: none; }
+      .mobile-book-bar { transition: none; }
+      html { scroll-behavior: auto; }
+    }
+
+    @media (max-width: 1024px) {
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+    }
+    @media (max-width: 820px) {
+      .stay-grid { grid-template-columns: 1fr; gap: 28px; padding-bottom: 56px; }
+      .book-card { display: none; }
+      .mobile-book-bar { display: flex; }
+      .amenities { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; text-align: center; }
+      .footer-brand { justify-content: center; }
+      main.stay-wrap { padding-bottom: 100px; }
+      .photo-grid { grid-template-columns: 1fr; height: 300px; }
+      .pgrid-side { display: none; }
+      .gm-body { padding: 0 52px; }
+      .gm-prev { left: 4px; }
+      .gm-next { right: 4px; }
+      .gm-thumbs { padding: 10px 12px 14px; }
+      .gm-thumb { width: 60px; height: 44px; }
+    }
+  </style>
+</head>
+<body>
+
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <nav class="nav" id="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="/" class="nav-brand" aria-label="New Beginnings DSC home">
+        <img src="/images/Logo/NB_FULLCOLOR_BACKGROUNDGREE3.png" alt="New Beginnings DSC" class="nav-logo">
+      </a>
+      <ul class="nav-links">
+        <li><a href="/#stays">Our Stays</a></li>
+        <li><a href="/#why">Why Us</a></li>
+        <li><a href="/#about">About</a></li>
+        <li><a href="/#faq">FAQ</a></li>
+        <li><a href="/#inquiry" class="nav-cta">Request to Book</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <div class="mobile-menu" id="mobileMenu" role="dialog" aria-label="Navigation menu" aria-modal="true">
+    <div class="mobile-menu-brand">
+      <img src="/images/Logo/NB_FULLCOLOR_BACKGROUNDGREE3.png" alt="New Beginnings DSC" class="nav-logo">
+    </div>
+    <a href="/#stays" class="mobile-link">Our Stays</a>
+    <a href="/#why" class="mobile-link">Why Us</a>
+    <a href="/#about" class="mobile-link">About</a>
+    <a href="/#faq" class="mobile-link">FAQ</a>
+    <a href="/#inquiry" class="btn btn-primary mobile-link">Request to Book</a>
+  </div>
+
+  <main id="main" role="main" class="stay-wrap">
+
+    <div id="stayContent" hidden>
+      <div class="container">
+        <p class="breadcrumb"><a href="/#stays">&larr; All Stays</a></p>
+        <div class="stay-head">
+          <span class="loc" id="stayLoc"></span>
+          <h1 id="stayName"></h1>
+          <p class="tagline" id="stayTagline"></p>
+        </div>
+        <div class="photo-grid" id="photoGrid">
+          <button class="pgrid-main" id="pgridMain" type="button" aria-label="Open photo gallery"></button>
+          <div class="pgrid-side" id="pgridSide"></div>
+          <button class="pgrid-show-all" id="pgridShowAll" type="button" aria-label="Show all photos">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+            Show all photos
+          </button>
+        </div>
+
+        <div class="stay-grid">
+          <div class="stay-desc">
+            <h2>About this stay</h2>
+            <div id="stayDescription"></div>
+            <h2>What this place offers</h2>
+            <div class="amenities" id="stayAmenities"></div>
+          </div>
+
+          <aside class="book-card">
+            <p class="book-card-note">Showing the next 60 days</p>
+            <div class="book-price" id="bookPrice"></div>
+            <p class="book-note" id="bookNote"></p>
+            <ul class="facts" id="bookFacts"></ul>
+            <a class="btn btn-primary btn-block" id="bookBtn" href="#">Request to Book</a>
+            <p class="book-help">No payment now. We'll confirm availability and details with you.</p>
+          </aside>
+        </div>
+
+        <!-- Availability calendar -->
+        <section class="availability">
+          <h2>When you can stay</h2>
+          <p class="cal-sub">Showing the next 60 days. Tap an available date to start a request.</p>
+          <div class="cal-wrap" id="calendarWrap"></div>
+          <div class="cal-legend">
+            <span><span class="swatch avail"></span> Available</span>
+            <span><span class="swatch booked"></span> Booked</span>
+            <span><span class="swatch past"></span> Past</span>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <div id="stayNotFound" class="notfound" hidden>
+      <div class="container">
+        <h1>We couldn't find that stay</h1>
+        <p>This listing may have been moved or is no longer available. Browse all of our current stays instead.</p>
+        <a href="/#stays" class="btn btn-primary">See All Stays</a>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Sticky mobile booking bar -->
+  <div class="mobile-book-bar" id="mobileBookBar" aria-hidden="true">
+    <div class="mb-price" id="mbPrice"></div>
+    <a class="btn btn-primary" id="mbBtn" href="#">Request to Book</a>
+  </div>
+
+  <div class="gallery-modal" id="galleryModal" role="dialog" aria-label="All photos" aria-modal="true">
+    <div class="gm-header">
+      <span class="gm-count" id="gmCount"></span>
+      <button class="gm-close" id="gmClose" aria-label="Close gallery">&times;</button>
+    </div>
+    <div class="gm-body">
+      <button class="gm-nav gm-prev" id="gmPrev" aria-label="Previous photo">&#8249;</button>
+      <img src="" alt="" id="gmImg">
+      <button class="gm-nav gm-next" id="gmNext" aria-label="Next photo">&#8250;</button>
+    </div>
+    <div class="gm-thumbs" id="gmThumbs"></div>
+  </div>
+
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">
+            <img src="/images/Logo/NB_FULLCOLOR_BACKGROUNDGREE3.png" alt="New Beginnings DSC" class="nav-logo">
+          </div>
+          <p class="footer-tagline">Where every open door is a new start.</p>
+          <div class="footer-info">Short-term property rentals<br>Missouri</div>
+        </div>
+        <div>
+          <h4>Explore</h4>
+          <ul class="footer-links">
+            <li><a href="/#stays">Our Stays</a></li>
+            <li><a href="/#why">Why Us</a></li>
+            <li><a href="/#about">About</a></li>
+            <li><a href="/#faq">FAQ</a></li>
+            <li><a href="/#inquiry">Request to Book</a></li>
+          </ul>
+        </div>
+        <div class="footer-contact">
+          <h4>Get in Touch</h4>
+          <p><strong>Email:</strong><br><a href="mailto:hello@newbeginningsdsc.com">hello@newbeginningsdsc.com</a></p>
+          <p>Prefer to message? <a href="/#inquiry">Use the request form.</a></p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        &copy; <span id="footerYear"></span> New Beginnings DSC. All rights reserved. &nbsp;|&nbsp; <a href="/privacy.html">Privacy Policy</a> &nbsp;|&nbsp; Website by <a href="https://jbwebco.com" target="_blank" rel="noopener">JB Web Co.</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      'use strict';
+
+      var PROPERTY = {
+        id: 'townhouse',
+        name: 'The Townhouse',
+        tagline: 'Elegant multi-level townhouse, styled and move-in ready',
+        status: 'available',
+        location: { label: 'Missouri' },
+        capacity: { guests: 4, bedrooms: 2, beds: 2, baths: 2 },
+        price: { amount: null, currency: 'USD', unit: 'night', note: null },
+        description: 'A well-appointed townhouse across multiple levels. The main floor has a bright living area with designer touches throughout. Head upstairs to the private media room: big screen, comfortable seating, set up for a night in.\n\nTwo full bathrooms, self check-in, and everything you need already stocked. Nichole takes care of the details so you don\'t have to.',
+        amenities: ['Smart TV & media room', '2 full bathrooms', 'Fast Wi-Fi', 'Free parking', 'Self check-in', 'Designer furnishings', 'Multiple floors', 'Fully stocked'],
+        images: [
+          { src: '/images/properties/townhouse/F66A9477.jpg', alt: 'Living room', featured: true },
+          { src: '/images/properties/townhouse/F66A9490.jpg', alt: 'Media room' },
+          { src: '/images/properties/townhouse/F66A9495.jpg', alt: 'Bathroom' },
+          { src: '/images/properties/townhouse/F66A9481.jpg', alt: 'Half bath' },
+          { src: '/images/properties/townhouse/F66A9478.jpg', alt: 'Interior' },
+          { src: '/images/properties/townhouse/F66A9479.jpg', alt: 'Interior' },
+          { src: '/images/properties/townhouse/F66A9483.jpg', alt: 'Interior' },
+          { src: '/images/properties/townhouse/F66A9485.jpg', alt: 'Interior' },
+          { src: '/images/properties/townhouse/F66A9487.jpg', alt: 'Interior' },
+          { src: '/images/properties/townhouse/F66A9492.jpg', alt: 'Interior' },
+          { src: '/images/properties/townhouse/F66A9498.jpg', alt: 'Interior' },
+          { src: '/images/properties/townhouse/F66A9501.jpg', alt: 'Interior' },
+          { src: '/images/properties/townhouse/F66A9502.jpg', alt: 'Interior' },
+          { src: '/images/properties/townhouse/F66A9505.jpg', alt: 'Interior' }
+        ],
+        unavailableDates: [],
+        booking: { type: 'inquiry', url: null }
+      };
+
+      document.getElementById('footerYear').textContent = new Date().getFullYear();
+      var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      /* Hamburger */
+      var hamburger = document.getElementById('hamburger');
+      var mobileMenu = document.getElementById('mobileMenu');
+      hamburger.addEventListener('click', function () {
+        var open = mobileMenu.classList.toggle('open');
+        hamburger.classList.toggle('active');
+        hamburger.setAttribute('aria-expanded', open);
+        document.body.style.overflow = open ? 'hidden' : '';
+      });
+      mobileMenu.querySelectorAll('a').forEach(function (link) {
+        link.addEventListener('click', function () {
+          mobileMenu.classList.remove('open'); hamburger.classList.remove('active');
+          hamburger.setAttribute('aria-expanded', 'false'); document.body.style.overflow = '';
+        });
+      });
+
+      /* Helpers */
+      function resolveSrc(src) { return src && src.charAt(0) === '/' ? src : '/' + src; }
+      function setMeta(id, content) { var el = document.getElementById(id); if (el) el.setAttribute('content', content); }
+      function dateKey(d) { return d.getFullYear() + '-' + String(d.getMonth()+1).padStart(2,'0') + '-' + String(d.getDate()).padStart(2,'0'); }
+      var CHECK = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>';
+      var PIN = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>';
+
+      /* Gallery modal */
+      var galleryModal = document.getElementById('galleryModal');
+      var gmImg = document.getElementById('gmImg');
+      var gmCount = document.getElementById('gmCount');
+      var gmClose = document.getElementById('gmClose');
+      var gmPrev = document.getElementById('gmPrev');
+      var gmNext = document.getElementById('gmNext');
+      var gmThumbs = document.getElementById('gmThumbs');
+      var gmCurrent = 0;
+      var gmAllImgs = [];
+
+      function buildGalleryThumbs() {
+        gmThumbs.innerHTML = '';
+        if (gmAllImgs.length < 2) { gmThumbs.style.display = 'none'; return; }
+        gmThumbs.style.display = '';
+        gmAllImgs.forEach(function (im, idx) {
+          var btn = document.createElement('button');
+          btn.type = 'button'; btn.className = 'gm-thumb';
+          btn.setAttribute('aria-label', 'View photo ' + (idx + 1));
+          var t = document.createElement('img');
+          t.src = resolveSrc(im.src); t.alt = ''; t.loading = 'lazy'; t.decoding = 'async';
+          btn.appendChild(t);
+          btn.addEventListener('click', function () { showGallerySlide(idx); });
+          gmThumbs.appendChild(btn);
+        });
+      }
+      function openGallery(idx) {
+        gmCurrent = idx;
+        showGallerySlide(gmCurrent);
+        galleryModal.classList.add('open');
+        document.body.style.overflow = 'hidden';
+        gmClose.focus();
+      }
+      function closeGallery() { galleryModal.classList.remove('open'); document.body.style.overflow = ''; }
+      function showGallerySlide(idx) {
+        gmCurrent = (idx + gmAllImgs.length) % gmAllImgs.length;
+        var im = gmAllImgs[gmCurrent];
+        if (reduce) {
+          gmImg.src = resolveSrc(im.src); gmImg.alt = im.alt || '';
+        } else {
+          gmImg.classList.add('fading');
+          var pre = new Image();
+          pre.onload = function () {
+            gmImg.src = pre.src; gmImg.alt = im.alt || '';
+            requestAnimationFrame(function () { gmImg.classList.remove('fading'); });
+          };
+          pre.src = resolveSrc(im.src);
+        }
+        gmCount.textContent = (gmCurrent + 1) + ' / ' + gmAllImgs.length;
+        gmPrev.style.display = gmAllImgs.length < 2 ? 'none' : '';
+        gmNext.style.display = gmAllImgs.length < 2 ? 'none' : '';
+        var thumbs = gmThumbs.children;
+        for (var i = 0; i < thumbs.length; i++) {
+          thumbs[i].classList.toggle('active', i === gmCurrent);
+        }
+        if (thumbs[gmCurrent]) {
+          thumbs[gmCurrent].scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'nearest', inline: 'center' });
+        }
+      }
+      gmClose.addEventListener('click', closeGallery);
+      galleryModal.addEventListener('click', function (e) { if (e.target === galleryModal) closeGallery(); });
+      gmPrev.addEventListener('click', function () { showGallerySlide(gmCurrent - 1); });
+      gmNext.addEventListener('click', function () { showGallerySlide(gmCurrent + 1); });
+      document.addEventListener('keydown', function (e) {
+        if (!galleryModal.classList.contains('open')) return;
+        if (e.key === 'Escape') closeGallery();
+        if (e.key === 'ArrowLeft') showGallerySlide(gmCurrent - 1);
+        if (e.key === 'ArrowRight') showGallerySlide(gmCurrent + 1);
+      });
+
+      /* Availability calendar */
+      function parseUnavailable(ranges) {
+        var set = new Set();
+        (ranges || []).forEach(function (r) {
+          if (!r.from || !r.to) return;
+          var from = new Date(r.from + 'T00:00:00');
+          var to = new Date(r.to + 'T00:00:00');
+          for (var d = new Date(from); d <= to; d.setDate(d.getDate() + 1)) {
+            set.add(dateKey(d));
+          }
+        });
+        return set;
+      }
+
+      function buildMonth(monthDate, today, unavailable, propertyId) {
+        var wrap = document.createElement('div');
+        wrap.className = 'cal-month';
+        var heading = document.createElement('div');
+        heading.className = 'cal-head';
+        heading.textContent = monthDate.toLocaleString('en-US', { month: 'long', year: 'numeric' });
+        wrap.appendChild(heading);
+        var dowRow = document.createElement('div');
+        dowRow.className = 'cal-dow';
+        ['S','M','T','W','T','F','S'].forEach(function (d) {
+          var c = document.createElement('span'); c.textContent = d; dowRow.appendChild(c);
+        });
+        wrap.appendChild(dowRow);
+        var grid = document.createElement('div');
+        grid.className = 'cal-grid';
+        var year = monthDate.getFullYear(), month = monthDate.getMonth();
+        var startCol = new Date(year, month, 1).getDay();
+        var daysInMonth = new Date(year, month + 1, 0).getDate();
+        for (var i = 0; i < startCol; i++) {
+          var empty = document.createElement('span');
+          empty.className = 'cal-cell empty';
+          grid.appendChild(empty);
+        }
+        for (var d = 1; d <= daysInMonth; d++) {
+          var date = new Date(year, month, d);
+          var key = dateKey(date);
+          var isPast = date < today;
+          var isUnavail = unavailable.has(key);
+          var cell;
+          if (!isPast && !isUnavail) {
+            cell = document.createElement('a');
+            cell.href = '/?property=' + encodeURIComponent(propertyId) + '&checkin=' + key + '#inquiry';
+            cell.className = 'cal-cell available';
+            cell.setAttribute('aria-label', 'Available ' + key + '. Start a request.');
+          } else {
+            cell = document.createElement('span');
+            cell.className = 'cal-cell ' + (isPast ? 'past' : 'unavailable');
+            if (isUnavail) cell.setAttribute('aria-label', 'Booked');
+          }
+          cell.textContent = d;
+          grid.appendChild(cell);
+        }
+        wrap.appendChild(grid);
+        return wrap;
+      }
+
+      function renderCalendar(property) {
+        var wrap = document.getElementById('calendarWrap');
+        if (!wrap) return;
+        var today = new Date();
+        today.setHours(0, 0, 0, 0);
+        var unavailable = parseUnavailable(property.unavailableDates);
+        for (var m = 0; m < 2; m++) {
+          var monthDate = new Date(today.getFullYear(), today.getMonth() + m, 1);
+          wrap.appendChild(buildMonth(monthDate, today, unavailable, property.id));
+        }
+      }
+
+      /* Render the property */
+      function render(p) {
+        var title = p.name + ' | New Beginnings DSC';
+        var desc = p.tagline || ('A short-term stay from New Beginnings DSC in ' + ((p.location && p.location.label) || 'Missouri') + '.');
+        var url = location.origin + '/stay/townhouse/';
+        document.title = title;
+        setMeta('metaDescription', desc); setMeta('ogDescription', desc); setMeta('twDescription', desc);
+        setMeta('ogTitle', title); setMeta('twTitle', title);
+        document.getElementById('metaCanonical').setAttribute('href', url);
+        setMeta('ogUrl', url);
+        var hero = (p.images || []).filter(function (im) { return im.featured; })[0] || (p.images || [])[0];
+        if (hero) { var abs = location.origin + resolveSrc(hero.src); setMeta('ogImage', abs); setMeta('twImage', abs); }
+
+        if (p.location && p.location.label) {
+          var loc = document.getElementById('stayLoc');
+          loc.innerHTML = PIN; loc.appendChild(document.createTextNode(p.location.label));
+        }
+        document.getElementById('stayName').textContent = p.name;
+        document.getElementById('stayTagline').textContent = p.tagline || '';
+
+        /* Photo grid */
+        var imgs = p.images && p.images.length ? p.images : [];
+        gmAllImgs = imgs;
+        buildGalleryThumbs();
+        var pgridMain = document.getElementById('pgridMain');
+        var pgridSide = document.getElementById('pgridSide');
+        var pgridShowAll = document.getElementById('pgridShowAll');
+
+        if (imgs.length) {
+          var mImg = document.createElement('img');
+          mImg.src = resolveSrc(hero.src); mImg.alt = hero.alt || p.name;
+          pgridMain.appendChild(mImg);
+          pgridMain.addEventListener('click', function () { openGallery(0); });
+
+          var sideImgs = imgs.slice(1, 5);
+          sideImgs.forEach(function (im, idx) {
+            var btn = document.createElement('button');
+            btn.type = 'button'; btn.className = 'pgrid-cell';
+            btn.setAttribute('aria-label', 'View photo ' + (idx + 2));
+            var t = document.createElement('img');
+            t.src = resolveSrc(im.src); t.alt = im.alt || (p.name + ' photo ' + (idx + 2));
+            t.loading = 'lazy'; t.decoding = 'async';
+            btn.appendChild(t);
+            btn.addEventListener('click', function () { openGallery(idx + 1); });
+            pgridSide.appendChild(btn);
+          });
+
+          if (imgs.length > 1) {
+            pgridShowAll.style.display = 'flex';
+            pgridShowAll.addEventListener('click', function () { openGallery(0); });
+          }
+          if (imgs.length < 2) pgridSide.style.display = 'none';
+        } else { document.getElementById('photoGrid').style.display = 'none'; }
+
+        /* Availability calendar */
+        renderCalendar(p);
+
+        /* Description */
+        var descWrap = document.getElementById('stayDescription');
+        (p.description || '').split(/\n{2,}/).forEach(function (para) {
+          var t = para.trim(); if (!t) return;
+          var el = document.createElement('p'); el.textContent = t; descWrap.appendChild(el);
+        });
+
+        /* Amenities with stagger reveal */
+        var amWrap = document.getElementById('stayAmenities');
+        (p.amenities || []).forEach(function (a, idx) {
+          var row = document.createElement('div'); row.className = 'amenity';
+          row.style.transitionDelay = (idx * 40) + 'ms';
+          var ic = document.createElement('span'); ic.innerHTML = CHECK; ic.style.display = 'inline-flex';
+          row.appendChild(ic); row.appendChild(document.createTextNode(a));
+          amWrap.appendChild(row);
+        });
+        if (!(p.amenities || []).length) {
+          var heading = amWrap.previousElementSibling;
+          if (heading) heading.style.display = 'none';
+          amWrap.style.display = 'none';
+        } else if (!reduce && 'IntersectionObserver' in window) {
+          var amObs = new IntersectionObserver(function (entries, o) {
+            entries.forEach(function (en) {
+              if (!en.isIntersecting) return;
+              amWrap.querySelectorAll('.amenity').forEach(function (a) { a.classList.add('in'); });
+              o.unobserve(en.target);
+            });
+          }, { threshold: 0.2 });
+          amObs.observe(amWrap);
+        } else {
+          amWrap.querySelectorAll('.amenity').forEach(function (a) { a.classList.add('in'); });
+        }
+
+        /* Booking card */
+        if (p.price && typeof p.price.amount === 'number') {
+          var bp = document.getElementById('bookPrice');
+          bp.textContent = '$' + p.price.amount;
+          var unit = document.createElement('span'); unit.textContent = p.price.unit ? ' / ' + p.price.unit : '';
+          bp.appendChild(unit);
+          var mbp = document.getElementById('mbPrice');
+          mbp.textContent = '$' + p.price.amount;
+          var mbu = document.createElement('span'); mbu.textContent = p.price.unit ? ' / ' + p.price.unit : '';
+          mbp.appendChild(mbu);
+        }
+        document.getElementById('bookNote').textContent = (p.price && p.price.note) ? p.price.note : '';
+        var facts = document.getElementById('bookFacts');
+        var c = p.capacity || {};
+        [['Guests', c.guests], ['Bedrooms', c.bedrooms], ['Beds', c.beds], ['Baths', c.baths]].forEach(function (pair) {
+          if (pair[1] == null) return;
+          var li = document.createElement('li');
+          var k = document.createElement('span'); k.textContent = pair[0];
+          var v = document.createElement('span'); v.textContent = pair[1];
+          li.appendChild(k); li.appendChild(v); facts.appendChild(li);
+        });
+
+        /* Booking CTA */
+        var btn = document.getElementById('bookBtn');
+        var mbBtn = document.getElementById('mbBtn');
+        var booking = p.booking || { type: 'inquiry' };
+        function setBtn(b) {
+          if (booking.type === 'external' && booking.url) {
+            b.href = booking.url; b.target = '_blank'; b.rel = 'noopener';
+            b.textContent = 'Book This Stay';
+          } else {
+            b.href = '/?property=' + encodeURIComponent(p.id) + '#inquiry';
+            b.textContent = 'Request to Book';
+          }
+        }
+        setBtn(btn); setBtn(mbBtn);
+
+        document.getElementById('stayContent').hidden = false;
+
+        /* Sticky mobile booking bar: appears after first viewport scroll */
+        var mbBar = document.getElementById('mobileBookBar');
+        function updateMbBar() {
+          if (window.innerWidth > 820) { mbBar.classList.remove('show'); return; }
+          if (window.scrollY > window.innerHeight * 0.55) mbBar.classList.add('show');
+          else mbBar.classList.remove('show');
+        }
+        window.addEventListener('scroll', updateMbBar, { passive: true });
+        window.addEventListener('resize', updateMbBar);
+        updateMbBar();
+      }
+
+      render(PROPERTY);
+
+    })();
+  </script>
+
+</body>
+</html>
