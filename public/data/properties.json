@@ -66,8 +66,8 @@
       "description": "A roomy beach-area getaway built for groups. Bunk beds, trundle setup, and plenty of common space mean everyone fits comfortably.\n\nClose to the beach and outdoor spots you came for. Cleaned top to bottom before every stay. Self check-in. Nichole is a text away if you need anything.",
       "amenities": ["Bunk beds", "Full kitchen", "Fast Wi-Fi", "Free parking", "Self check-in", "Multiple sleeping areas", "Washer & dryer", "Outdoor space"],
       "images": [
-        { "src": "images/properties/beachbound/OONt4Xro.jpg", "alt": "Gulf Highlands Beach Resort entrance sign", "featured": true },
-        { "src": "images/properties/beachbound/Cover.webp", "alt": "Beach Bound exterior" },
+        { "src": "images/properties/beachbound/Cover.webp", "alt": "Beach Bound highlights: pool, living room, bunk room, and beach access", "featured": true },
+        { "src": "images/properties/beachbound/OONt4Xro.jpg", "alt": "Gulf Highlands Beach Resort entrance sign" },
         { "src": "images/properties/beachbound/inside-full.jpg", "alt": "Interior" },
         { "src": "images/properties/beachbound/inside-front-door.jpg", "alt": "Front entry" },
         { "src": "images/properties/beachbound/IMG_0601.jpg", "alt": "Interior" },
