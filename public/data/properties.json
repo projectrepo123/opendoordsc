@@ -2,9 +2,9 @@
   "schemaVersion": 1,
   "properties": [
     {
-      "id": "henrietta",
-      "name": "3214 Henrietta",
-      "url": "/stay/henrietta/",
+      "id": "parkside",
+      "name": "Parkside Perfections",
+      "url": "/stay/parkside/",
       "tagline": "Spacious two-story home, hardwood floors, room to spread out",
       "bestFor": "Family vacation",
       "hostNote": "This one books fast on holiday weekends. Request your dates early.",
@@ -16,12 +16,12 @@
       "description": "A full two-story home with real space to breathe. Hardwood floors throughout the main level, a large living room, and a separate dining area that seats a crowd.\n\nUpstairs has a cozy sitting nook plus the bedrooms. Cleaned top to bottom before every stay. Self check-in. Nichole is a text away if you need anything.",
       "amenities": ["Hardwood floors", "Full kitchen", "Multiple living areas", "Fast Wi-Fi", "Free parking", "Washer & dryer", "Self check-in", "Ceiling fans"],
       "images": [
-        { "src": "images/properties/henrietta/5V4A9042.jpg", "alt": "3214 Henrietta exterior", "featured": true },
-        { "src": "images/properties/henrietta/5V4A9054.jpg", "alt": "Living room" },
-        { "src": "images/properties/henrietta/5V4A9080.jpg", "alt": "Dining area" },
-        { "src": "images/properties/henrietta/5V4A9097.jpg", "alt": "Upstairs sitting area" },
-        { "src": "images/properties/henrietta/F66A2784.jpg", "alt": "Dining area with marble table and navy bench" },
-        { "src": "images/properties/henrietta/F66A2793.jpg", "alt": "Bedroom with green bedding and ceiling fan" }
+        { "src": "images/properties/parkside/5V4A9042.jpg", "alt": "Parkside Perfections exterior", "featured": true },
+        { "src": "images/properties/parkside/5V4A9054.jpg", "alt": "Living room" },
+        { "src": "images/properties/parkside/5V4A9080.jpg", "alt": "Dining area" },
+        { "src": "images/properties/parkside/5V4A9097.jpg", "alt": "Upstairs sitting area" },
+        { "src": "images/properties/parkside/F66A2784.jpg", "alt": "Dining area with marble table and navy bench" },
+        { "src": "images/properties/parkside/F66A2793.jpg", "alt": "Bedroom with green bedding and ceiling fan" }
       ],
       "unavailableDates": [],
       "booking": { "type": "inquiry", "url": null, "embed": null }
@@ -36,10 +36,10 @@
       "status": "available",
       "featured": false,
       "location": { "label": "Missouri" },
-      "capacity": { "guests": 4, "bedrooms": 2, "beds": 2, "baths": 2 },
+      "capacity": { "guests": 4, "bedrooms": 2, "beds": 2, "baths": 2.5 },
       "price": { "amount": null, "currency": "USD", "unit": "night", "note": null },
-      "description": "A well-appointed townhouse across multiple levels. The main floor has a bright living area with designer touches throughout. Head upstairs to the private media room: big screen, comfortable seating, set up for a night in.\n\nTwo full bathrooms, self check-in, and everything you need already stocked. Nichole takes care of the details so you don't have to.",
-      "amenities": ["Smart TV & media room", "2 full bathrooms", "Fast Wi-Fi", "Free parking", "Self check-in", "Designer furnishings", "Multiple floors", "Fully stocked"],
+      "description": "A well-appointed townhouse across multiple levels. The main floor has a bright living area with designer touches throughout. Head upstairs to the private media room: big screen, comfortable seating, set up for a night in.\n\nTwo and a half bathrooms, an attached garage, self check-in, and everything you need already stocked. Nichole takes care of the details so you don't have to.",
+      "amenities": ["Smart TV & media room", "2.5 bathrooms", "Attached garage", "Fast Wi-Fi", "Free parking", "Self check-in", "Designer furnishings", "Multiple floors", "Fully stocked"],
       "images": [
         { "src": "images/properties/townhouse/F66A9477.jpg", "alt": "The Townhouse living room", "featured": true },
         { "src": "images/properties/townhouse/F66A9490.jpg", "alt": "Media room" },
