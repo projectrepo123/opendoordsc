@@ -3,7 +3,7 @@
   "properties": [
     {
       "id": "parkside",
-      "name": "Parkside Perfections",
+      "name": "Parkside Perfection",
       "url": "/stay/parkside/",
       "tagline": "Spacious two-story home, hardwood floors, room to spread out",
       "bestFor": "Family vacation",
@@ -16,7 +16,7 @@
       "description": "A full two-story home with real space to breathe. Hardwood floors throughout the main level, a large living room, and a separate dining area that seats a crowd.\n\nUpstairs has a cozy sitting nook plus the bedrooms. Cleaned top to bottom before every stay. Self check-in. Nichole is a text away if you need anything.",
       "amenities": ["Hardwood floors", "Full kitchen", "Multiple living areas", "Fast Wi-Fi", "Free parking", "Washer & dryer", "Self check-in", "Ceiling fans"],
       "images": [
-        { "src": "images/properties/parkside/5V4A9042.jpg", "alt": "Parkside Perfections exterior", "featured": true },
+        { "src": "images/properties/parkside/5V4A9042.jpg", "alt": "Parkside Perfection exterior", "featured": true },
         { "src": "images/properties/parkside/5V4A9054.jpg", "alt": "Living room" },
         { "src": "images/properties/parkside/5V4A9080.jpg", "alt": "Dining area" },
         { "src": "images/properties/parkside/5V4A9097.jpg", "alt": "Upstairs sitting area" },
@@ -24,7 +24,7 @@
         { "src": "images/properties/parkside/F66A2793.jpg", "alt": "Bedroom with green bedding and ceiling fan" }
       ],
       "unavailableDates": [],
-      "booking": { "type": "inquiry", "url": null, "embed": null }
+      "booking": { "type": "external", "url": "https://www.airbnb.com/rooms/53233051", "embed": null }
     },
     {
       "id": "townhouse",

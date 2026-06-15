@@ -672,7 +672,7 @@
               <div class="hero-slogan-overlay" aria-hidden="true">Every stay is personal.</div>
               <div class="hero-collage">
                 <div class="hero-collage-main">
-                  <img src="/images/properties/parkside/5V4A9042.jpg" alt="Parkside Perfections exterior" loading="eager">
+                  <img src="/images/properties/parkside/5V4A9042.jpg" alt="Parkside Perfection exterior" loading="eager">
                 </div>
                 <div class="hero-collage-side">
                   <div class="hero-collage-item">
@@ -1132,7 +1132,15 @@
         foot.className = 'stay-foot';
         var price = document.createElement('div');
         price.className = 'stay-price';
-        if (!p.price || p.price.amount === null || typeof p.price.amount !== 'number') {
+        if (p.booking && p.booking.type === 'external' && p.booking.url) {
+          var bookNow = document.createElement('a');
+          bookNow.className = 'btn btn-primary';
+          bookNow.href = p.booking.url;
+          bookNow.target = '_blank';
+          bookNow.rel = 'noopener';
+          bookNow.textContent = 'Book Now';
+          price.appendChild(bookNow);
+        } else if (!p.price || p.price.amount === null || typeof p.price.amount !== 'number') {
           var inquire = document.createElement('span');
           inquire.className = 'stay-price-inquire';
           inquire.textContent = 'Inquire for pricing';
