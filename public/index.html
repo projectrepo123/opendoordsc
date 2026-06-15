@@ -1151,14 +1151,14 @@
           unit.textContent = ' / ' + p.price.unit;
           price.appendChild(unit);
         }
-        foot.appendChild(price);
-
         var btn = document.createElement('button');
         btn.type = 'button';
         btn.className = 'btn btn-ghost';
-        btn.textContent = 'See availability →';
+        btn.textContent = 'Request to Book';
         btn.addEventListener('click', function () { preselect(p.name); });
         foot.appendChild(btn);
+
+        foot.appendChild(price);
 
         body.appendChild(foot);
         card.appendChild(body);
