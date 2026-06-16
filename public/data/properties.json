@@ -49,7 +49,7 @@
         { "src": "images/properties/townhouse/F66A9502.jpg", "alt": "Upstairs hallway with sitting table" }
       ],
       "unavailableDates": [],
-      "booking": { "type": "inquiry", "url": null, "embed": null }
+      "booking": { "type": "external", "url": "https://www.furnishedfinder.com/property/697192_1", "embed": null }
     },
     {
       "id": "beachbound",
